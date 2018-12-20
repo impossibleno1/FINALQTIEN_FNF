@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DIENMAYQUYETTIEN2.Models;
+using System.Transactions;
 
 namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
 {
@@ -20,25 +21,12 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             return View(db.CashBills.ToList());
         }
 
-        // GET: Admin/CashBills/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            CashBill cashBill = db.CashBills.Find(id);
-            if (cashBill == null)
-            {
-                return HttpNotFound();
-            }
-            return View(cashBill);
-        }
 
         // GET: Admin/CashBills/Create
+        [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            return View(Session["CashBill"]);
         }
 
         // POST: Admin/CashBills/Create
@@ -46,20 +34,52 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BillCode,CustomerName,PhoneNumber,Address,Date,Shipper,Note,GrandTotal")] CashBill cashBill)
+        public ActionResult Create(CashBill model)
         {
             if (ModelState.IsValid)
             {
-                db.CashBills.Add(cashBill);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                Session["CashBill"] = model;
             }
 
-            return View(cashBill);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create2()
+        {
+            using (var scope = new TransactionScope())
+            try
+            {
+                var cashBill = Session["CashBill"] as CashBill;
+                var ctcashBill = Session["ctcashBill"] as List<CashBillDetail>;
+
+                db.CashBills.Add(cashBill);
+                db.SaveChanges();
+
+                foreach (var chiTiet in ctcashBill)
+                {
+                    chiTiet.BillID = cashBill.ID;
+                    chiTiet.Product = null;
+                    db.CashBillDetails.Add(chiTiet);
+                }
+
+                db.SaveChanges();
+                scope.Complete();
+
+                Session["CashBill"] = null;
+                Session["ctcashBill"] = null;
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", e.Message);
+            }
+            return View("Create");
         }
 
         // GET: Admin/CashBills/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
             if (id == null)
             {

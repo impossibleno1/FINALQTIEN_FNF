@@ -7,7 +7,7 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create2", "CashBillDetails")) 
 {
     @Html.AntiForgeryToken()
     
@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.BillID, "BillID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("BillID", String.Empty)
+                @Html.DropDownListFor(model => model.ProductID, (SelectList)ViewData["ProductID"], String.Empty)
                 @Html.ValidationMessageFor(model => model.BillID)
             </div>
         </div>
