@@ -7,7 +7,7 @@
 
 <h2>Create CashBill</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
@@ -90,3 +90,37 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@if (Session["CashBill"] != null)
+{
+
+    @Html.Action("Create", "CashBillDetails")
+    @Html.Action("Index", "CashBillDetails")
+
+    <br /><br />
+    using (Html.BeginForm("Create2", "CashBills"))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lập hóa đơn" class="btn btn-primary" />
+            </div>
+        </div>
+    }
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    <script>
+    $('#ProductID').change(function () {
+        var url = '@Url.Action("DonGiaBan", "CashBillDetails")';
+        url = url + '?ProductID=' + $(this).val();
+        $.get(url, function (data) {
+            $('#DonGiaBan').val(data);
+        });
+    });
+    </script>
+}
