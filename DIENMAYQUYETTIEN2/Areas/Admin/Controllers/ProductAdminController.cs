@@ -211,7 +211,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             
             if (model.ProductName.Trim(' ')=="")
             {
-                ModelState.AddModelError("ProductName", "luaan dep trai");
+                ModelState.AddModelError("ProductName", "Không được để trống");
             
             }
                 
