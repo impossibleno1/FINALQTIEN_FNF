@@ -164,6 +164,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CashBillDetailsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CashBillsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -342,6 +344,16 @@
     <Content Include="fonts\poppins\Poppins-ThinItalic.ttf" />
     <Content Include="Areas\Admin\Views\ProductAdmin\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ProductAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBills\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBills\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBills\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBills\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBills\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBillDetails\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBillDetails\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBillDetails\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBillDetails\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBillDetails\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
