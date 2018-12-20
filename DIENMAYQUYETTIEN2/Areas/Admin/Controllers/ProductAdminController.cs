@@ -36,7 +36,8 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            ViewBag.ProductType = db.ProductTypes.OrderByDescending(x => x.ID).ToList();
+            //ViewBag.ProductType = db.ProductTypes.OrderByDescending(x => x.ID).ToList();
+            ViewBag.ProductTypeID = new SelectList(db.ProductTypes, "ID", "ProductTypeName");
             if (Session["Username"] != null)
             {
                 return View();
@@ -51,11 +52,12 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         public ActionResult Create(Product p)
         {
             
+            CheckBangSanPham(p);
             if (ModelState.IsValid)
             {
                 using (var scope = new TransactionScope())
-                { 
-                var pro = new Product();
+                {
+                    var pro = new Product();
 
                 pro.ProductCode = p.ProductCode;
                 pro.ProductName = p.ProductName;
@@ -84,6 +86,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                 }
 
             }
+            ViewBag.ProductTypeID = new SelectList(db.ProductTypes, "ID", "ProductTypeName", p.ProductTypeID);
             return View();
         }
         public FileResult Details(int id)
@@ -195,9 +198,21 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("Quantity", "Giá bán phải lớn hơn 0");
             }
-            if (model.ProductName.Length >30)
+
+            if (model.ProductName == null)
+            {
+                ModelState.AddModelError("ProductName", "Tên sản phẩm phải co ký tự");
+            }
+            
+            if (model.ProductName.Length > 30)
             {
                 ModelState.AddModelError("ProductName", "Tên sản phẩm phải lớn hơn 30 ký tự");
+            }
+            
+            if (model.ProductName.Trim(' ')=="")
+            {
+                ModelState.AddModelError("ProductName", "luaan dep trai");
+            
             }
                 
         }

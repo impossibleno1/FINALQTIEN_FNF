@@ -4,15 +4,15 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Admin_Layout.cshtml";
 }
+<h2 style="text-align:center;"><strong>MANAGE PRODUCT</strong></h2>
 
-<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create")" class="btn btn-primary">ADD NEW PRODUCT</a>
 </p>
 <div class="card mb-3">
     <div class="card-header">
-        <i class="fa fa-table"></i> Data Table Example
+        
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -78,9 +78,12 @@
                                 @Html.DisplayFor(modelItem => item.ProductType.ProductTypeName)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+                                <a title="Sửa" href="@Url.Action("Edit", new { id = item.ID})" class="btn btn-primary ">Edit</a> 
+                                @*<a title="Thông tin" href="@Url.Action("Details", new { id = item.ID})" class="btn btn-success glyphicon glyphicon-file"></a> |*@
+                                <a title="Xóa" href="@Url.Action("Delete", new { id = item.ID})" class="btn btn-danger ">Delete</a>
                             </td>
                         </tr>
                     }

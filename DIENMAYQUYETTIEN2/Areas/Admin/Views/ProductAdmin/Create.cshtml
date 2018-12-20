@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Admin_Layout.cshtml";
 }
 
-<h2>Create New</h2>
+<h2 style="text-align:center;"><strong>ADD NEW PRODUCT</strong></h2>
 
 
 @using (Html.BeginForm("Create", "ProductAdmin",FormMethod.Post, new { enctype = "multipart/form-data" })) 
@@ -36,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProductTypeID, "ProductTypeID", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ProductTypeID", new SelectList(ViewBag.ProductType,"ID","ProductTypeName"))
+                @Html.DropDownListFor(model => model.ProductTypeID, (IEnumerable<SelectListItem>)ViewData["ProductTypeID"], new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ProductTypeID)
             </div>
         </div>
@@ -92,15 +92,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a title="Back" href="@Url.Action("Index")" class="btn btn-danger ">Back to list</a>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
 
 
 
