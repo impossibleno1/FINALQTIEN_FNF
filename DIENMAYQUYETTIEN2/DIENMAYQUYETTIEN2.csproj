@@ -354,6 +354,7 @@
     <Content Include="Areas\Admin\Views\CashBillDetails\Details.cshtml" />
     <Content Include="Areas\Admin\Views\CashBillDetails\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\CashBillDetails\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\View1.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
