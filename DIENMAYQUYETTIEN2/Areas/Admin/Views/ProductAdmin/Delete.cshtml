@@ -4,96 +4,81 @@
     ViewBag.Title = "Delete";
     Layout = "~/Areas/Admin/Views/Shared/_Admin_Layout.cshtml";
 }
-
-<h2>Delete Poduct</h2>
-
-<h3 style="text-align:center">Are you sure you want to delete this?</h3>
+<div style="height: 20px;"></div>
+<div style="display: flex; justify-content: center; flex-direction: row;">
+    <h2>Delete Product</h2>
+</div>
+<div style="display: flex; justify-content: center; flex-direction: row;">
+    <h3>Are you sure you want to delete this?</h3>
+</div>
 <div>
-    
-    <hr />
-    <dl class="form-horizontal">
-        <dl class="form-group">
-            <dt>
-                @Html.DisplayNameFor(model => model.ProductCode)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ProductCode)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ProductName)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.SalePrice)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.SalePrice)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.OriginPrice)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.OriginPrice)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.InstallmentPrice)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.InstallmentPrice)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Quantity)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Avatar)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Avatar)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Status)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Status)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.ProductType.ProductTypeCode)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ProductType.ProductTypeCode)
-            </dd>
+    <div class="dl-horizontal" style="display: flex; justify-content: center; flex-direction: row; margin-top: 30px; font-size: 18px">
+        <div>
+            <dl style="display: flex;">
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductCode):
+                </dt>
+                &nbsp;
+                <dd>
+                    @Html.DisplayFor(model => model.ProductCode)
+                </dd>
             </dl>
-        </dl>
+            <dl style="display: flex;">
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductName):
+                </dt>
+                &nbsp;
+                <dd>
+                    @Html.DisplayFor(model => model.ProductName)
+                </dd>
+            </dl>
+            <dl style="display: flex;">
+                <dt>
+                    @Html.DisplayNameFor(model => model.SalePrice):
+                </dt>
+                &nbsp;
+                <dd>
+                    @Html.DisplayFor(model => model.SalePrice)
+                </dd>
+            </dl>
+            <dl style="display: flex;">
+                <dt>
+                    @Html.DisplayNameFor(model => model.OriginPrice):
+                </dt>
+                &nbsp;
+                <dd>
+                    @Html.DisplayFor(model => model.OriginPrice)
+                </dd>
+            </dl>
+            <dl style="display: flex;">
+                <dt>
+                    @Html.DisplayNameFor(model => model.InstallmentPrice):
+                </dt>
+                &nbsp;
+                <dd>
+                    @Html.DisplayFor(model => model.InstallmentPrice)
+                </dd>
+            </dl>
+            <dl style="display: flex;">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Quantity):
+                </dt>
+                &nbsp;
+                <dd>
+                    @Html.DisplayFor(model => model.Quantity)
+                </dd>
+            </dl>
+            <div class="dl-horizontal" style="display: flex; justify-content: center; flex-direction: row; margin-top: 30px;">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-primary" />
+                        <a title="Back" href="@Url.Action("Index")" class="btn btn-danger ">Back to list</a>
+                    </div>
+                }
             </div>
-        }
+        </div>
+    </div>
 </div>

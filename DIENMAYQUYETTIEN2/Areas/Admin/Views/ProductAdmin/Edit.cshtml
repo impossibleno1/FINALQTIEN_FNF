@@ -5,15 +5,13 @@
     Layout = "~/Areas/Admin/Views/Shared/_Admin_Layout.cshtml";
 }
 
-<h2 style="text-align:center;"><strong>EDIT PRODUCT</strong></h2>
+<h2 style="text-align:center; padding-top: 20px;"><strong>EDIT PRODUCT</strong></h2>
 
 @using (Html.BeginForm("Edit", "ProductAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-       
-        <hr />
+    <div class="form-horizontal" style="padding: 0px 20%;">
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)
 
@@ -76,7 +74,7 @@
 
         <div class="form-group">
             @Html.Label("HinhAnh", "Hình sản phẩm", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div style="width: 200px; padding-left: 15px;">
                 @Html.TextBox("HinhAnh", null, new { type = "file", onchange = "readURL(this);", @class = "form-control" })
                 @Html.ValidationMessage("HinhAnh")
                 <img id="HinhSP" src="@Url.Action("Details", new { id = Model.ID })" width="200" height="200" />
@@ -93,15 +91,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a title="Back" href="@Url.Action("Index")" class="btn btn-danger ">Back to list</a>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 <script>
         function readURL(input) {
             if (input.files && input.files[0]) {

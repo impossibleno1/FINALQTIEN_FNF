@@ -167,6 +167,9 @@
     <Compile Include="Areas\Admin\Controllers\CashBillDetailsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CashBillsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
+    <Compile Include="Areas\Main\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Main\Controllers\ProductCustommer.cs" />
+    <Compile Include="Areas\Main\MainAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -223,7 +226,6 @@
     <Content Include="Content\dataTables.bootstrap4.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\sb-admin.css" />
-    <Content Include="Content\Style.css" />
     <Content Include="css\main.css" />
     <Content Include="css\util.css" />
     <Content Include="favicon.ico" />
@@ -266,14 +268,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\Admin\Views\ProductAdmin\Index.cshtml" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="Areas\Admin\Views\ProductAdmin\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\ProductAdmin\Login.cshtml" />
     <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
@@ -343,8 +342,6 @@
     <Content Include="fonts\poppins\Poppins-SemiBoldItalic.ttf" />
     <Content Include="fonts\poppins\Poppins-Thin.ttf" />
     <Content Include="fonts\poppins\Poppins-ThinItalic.ttf" />
-    <Content Include="Areas\Admin\Views\ProductAdmin\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\ProductAdmin\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\CashBills\Create.cshtml" />
     <Content Include="Areas\Admin\Views\CashBills\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\CashBills\Details.cshtml" />
@@ -355,7 +352,15 @@
     <Content Include="Areas\Admin\Views\CashBillDetails\Details.cshtml" />
     <Content Include="Areas\Admin\Views\CashBillDetails\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\CashBillDetails\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\View1.cshtml" />
+    <Content Include="Areas\Main\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Main\Views\web.config" />
+    <Content Include="Areas\Main\Views\Shared\_Admin_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Login.cshtml" />
+    <Content Include="Areas\Main\Views\Products\Login.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -430,6 +435,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Main\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

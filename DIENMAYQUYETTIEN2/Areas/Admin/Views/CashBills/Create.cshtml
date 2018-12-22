@@ -5,20 +5,18 @@
     Layout = "~/Areas/Admin/Views/Shared/_Admin_Layout.cshtml";
 }
 
-<h2>Create CashBill</h2>
+<h2 style="text-align:center; padding-top: 20px;">Create</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        
-        <hr />
+    <div style="height: 20px;"></div>
+    <div class="form-horizontal"  style="padding: 0px 20%;">
         @Html.ValidationSummary(true)
         <div class="form-group">
             @Html.LabelFor(model => model.BillCode, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.BillCode)
+                @Html.TextBoxFor(model => model.BillCode, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BillCode)
             </div>
         </div>
@@ -26,7 +24,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CustomerName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CustomerName)
+                @Html.TextBoxFor(model => model.CustomerName, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CustomerName)
             </div>
         </div>
@@ -34,7 +32,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PhoneNumber)
+                @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.PhoneNumber)
             </div>
         </div>
@@ -42,7 +40,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Address)
+                @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Address)
             </div>
         </div>
@@ -50,7 +48,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Date)
+                @Html.TextBoxFor(model => model.Date, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Date)
             </div>
         </div>
@@ -58,7 +56,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Shipper, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Shipper)
+                @Html.TextBoxFor(model => model.Shipper, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Shipper)
             </div>
         </div>
@@ -66,7 +64,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Note, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Note)
+                @Html.TextBoxFor(model => model.Note, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Note)
             </div>
         </div>
@@ -74,22 +72,19 @@
         <div class="form-group">
             @Html.LabelFor(model => model.GrandTotal, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.GrandTotal)
+                @Html.TextBoxFor(model => model.GrandTotal, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.GrandTotal)
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a title="Back" href="@Url.Action("Index")" class="btn btn-danger ">Back to list</a>
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @if (Session["CashBill"] != null)
 {
@@ -109,10 +104,6 @@
     }
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
 @section Scripts {
     <script>
     $('#ProductID').change(function () {
@@ -121,6 +112,6 @@
         $.get(url, function (data) {
             $('#DonGiaBan').val(data);
         });
-    });
+    })
     </script>
 }

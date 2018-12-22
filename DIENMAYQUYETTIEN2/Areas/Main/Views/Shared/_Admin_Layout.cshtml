@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,13 +9,19 @@
     <meta name="author" content="">
     <title>Dien May Quyet Tien</title>
     <!-- Bootstrap core CSS-->
-    
+
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/dataTables.bootstrap4.css" rel="stylesheet" />
     <link href="~/Content/sb-admin.css" rel="stylesheet" />
     <link href="~/Content/bootstrap1.css" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&amp;subset=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="https://sto.onlinefriday.vn/theme/frontend/default/lib/fontAwesome/css/fontawesome-all.css" media="all" />
+    <link rel="stylesheet" href="https://sto.onlinefriday.vn/theme/frontend/default/lib/bootstrap/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="~/Content/stylePromote.css?v=26" media="all" />
+    <link rel="stylesheet" href="~/Content/jquery.fancybox.css" media="all" />
+    <link rel="stylesheet" href="~/Content/style.css" media="all" />
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
@@ -26,49 +31,6 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-dashboard"></i>
-                        <span class="nav-link-text">Manage Product</span>
-                    </a>
-                    <ul class="sidenav-second-level collapse" id="collapseComponents">
-                        <li>
-                            <a href="~/Admin/ProductAdmin">Quản lý sản phẩm</a>
-                        </li>
-                        <li>
-                            <a href="~/Admin/ProductAdmin/Create">Thêm sản phẩm mới</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-file"></i>
-                        <span class="nav-link-text">Manage CashBill </span>
-                    </a>
-                    <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-                        <li>
-                            <a href="~/Admin/CashBills">Quản Lý Hóa Đơn </a>
-                        </li>
-                        <li>
-                            <a href="~/Admin/CashBills/Create">Thêm Hóa Đơn Mới</a>
-                        </li>
-                        
-                    </ul>
-                </li>
-
-            </ul>
-
-
-
-            <ul class="navbar-nav sidenav-toggler">
-                <li class="nav-item">
-                    <a class="nav-link text-center" id="sidenavToggler">
-                        <i class="fa fa-fw fa-angle-left"></i>
-                    </a>
-                </li>
-            </ul>
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item dropdown">
@@ -177,7 +139,7 @@
             </ul>
         </div>
     </nav>
-    <div class="content-wrapper">
+    <div>
         @RenderBody()
         <div class="container-fluid">
 
@@ -187,7 +149,7 @@
         </div>
         <!-- /.container-fluid-->
         <!-- /.content-wrapper-->
-        <footer class="sticky-footer">
+        <footer class="sticky-footer" style="width: 100%;">
             <div class="container">
                 <div class="text-center">
                     <small>Copyright © Your Website 2017</small>

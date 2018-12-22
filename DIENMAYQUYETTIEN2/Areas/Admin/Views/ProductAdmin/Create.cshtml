@@ -5,22 +5,20 @@
     Layout = "~/Areas/Admin/Views/Shared/_Admin_Layout.cshtml";
 }
 
-<h2 style="text-align:center;"><strong>ADD NEW PRODUCT</strong></h2>
+<h2 style="text-align:center; padding-top: 20px;"><strong>ADD NEW PRODUCT</strong></h2>
 
 
 @using (Html.BeginForm("Create", "ProductAdmin",FormMethod.Post, new { enctype = "multipart/form-data" })) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Product</h4>
-        <hr />
+    <div class="form-horizontal" style="padding: 0px 20%;">
         @Html.ValidationSummary(true)
 
 
         <div class="form-group">
             @Html.LabelFor(model => model.ProductName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.TextBoxFor(model => model.ProductName, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ProductName)
             </div>
@@ -28,7 +26,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.ProductTypeID, "ProductTypeID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.DropDownListFor(model => model.ProductTypeID, (IEnumerable<SelectListItem>)ViewData["ProductTypeID"], new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ProductTypeID)
             </div>
@@ -36,7 +34,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.SalePrice, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.TextBoxFor(model => model.SalePrice, new { type = "number", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.SalePrice)
             </div>
@@ -44,7 +42,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.OriginPrice, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.TextBoxFor(model => model.OriginPrice, new { type = "number", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.OriginPrice)
             </div>
@@ -52,7 +50,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.InstallmentPrice, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.TextBoxFor(model => model.InstallmentPrice, new { type = "number", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.InstallmentPrice)
             </div>
@@ -60,7 +58,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Quantity, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @Html.TextBoxFor(model => model.Quantity, new { type = "number", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Quantity)
             </div>
@@ -68,7 +66,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Avatar, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div style="width: 200px; padding-left: 15px;">
                 @Html.TextBox("Avatar", null, new { type = "file", onchange = "readURL(this)", @class = "form-control" })
                 @Html.ValidationMessage("Avatar")
                 <img id="HinhSP" src="" width="200" height="200" />
@@ -77,8 +75,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Status)
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Status, new { @class = "type_select" })
                 @Html.ValidationMessageFor(model => model.Status)
             </div>
         </div>

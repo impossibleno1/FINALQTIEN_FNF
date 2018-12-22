@@ -1,19 +1,16 @@
 ﻿@model IEnumerable<DIENMAYQUYETTIEN2.Models.Product>
 
-    @{
+@{
 ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Admin_Layout.cshtml";
 }
-<h2 style="text-align:center;"><strong>MANAGE PRODUCT</strong></h2>
+<h2 style="text-align:center; padding-top: 20px;" class="title"><strong>MANAGE PRODUCT</strong></h2>
 
 
-<p>
+<p style="display: flex; justify-content: flex-end; padding-right: 35px;">
     <a href="@Url.Action("Create")" class="btn btn-primary">ADD NEW PRODUCT</a>
 </p>
 <div class="card mb-3">
-    <div class="card-header">
-        
-    </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
