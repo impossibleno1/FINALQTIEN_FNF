@@ -460,3 +460,7 @@ iframe {
     opacity: 1;
   }
 }
+
+.title {
+    padding-top: 20px;
+}
