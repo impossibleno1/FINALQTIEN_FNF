@@ -78,9 +78,13 @@ ViewBag.Title = "Index";
                                 @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.ID }) |
                                 @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
-                                <a title="Sửa" href="@Url.Action("Edit", new { id = item.ID})" class="btn btn-primary ">Edit</a> 
+                                <a title="Sửa" href="@Url.Action("Edit", new { id = item.ID})" class="btn btn-primary ">
+                                    <i class="fas fa-edit"></i>
+                                </a> 
                                 @*<a title="Thông tin" href="@Url.Action("Details", new { id = item.ID})" class="btn btn-success glyphicon glyphicon-file"></a> |*@
-                                <a title="Xóa" href="@Url.Action("Delete", new { id = item.ID})" class="btn btn-danger ">Delete</a>
+                                <a title="Xóa" href="@Url.Action("Delete", new { id = item.ID})" class="btn btn-danger ">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
                             </td>
                         </tr>
                     }
