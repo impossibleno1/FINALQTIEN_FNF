@@ -21,15 +21,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var product = db.Products.OrderByDescending(x => x.ID).ToList();
-
-            //if (Session["Username"] != null)
-            //{
-                return View(product);
-            //}
-            //else
-            //{
-                return RedirectToAction("Login");
-            //}
+            return View(product);
 
         }
         //create
