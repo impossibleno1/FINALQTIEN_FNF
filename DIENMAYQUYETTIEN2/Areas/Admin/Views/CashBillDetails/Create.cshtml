@@ -14,15 +14,7 @@
     <div class="form-horizontal" style="padding: 0px 6%;">
         @Html.ValidationSummary(true)
         <div class="form-group">
-            @Html.LabelFor(model => model.BillID, "BillID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-8">
-                @Html.DropDownListFor(model => model.ProductID, (SelectList)ViewData["ProductID"], String.Empty)
-                @Html.ValidationMessageFor(model => model.BillID)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProductID, "ProductID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ProductID, "Product", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-8">
                 @Html.DropDownList("ProductID", String.Empty)
                 @Html.ValidationMessageFor(model => model.ProductID)
