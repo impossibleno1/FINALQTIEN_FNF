@@ -115,17 +115,23 @@ namespace UnitTestProject1.Tests.Controllers
         public void TestEdit1()
         {
             // arrange
-            var _repository = new Mock<IContactRepository>();
+            var _repository = new Mock<IC>();
+            var db = new DIENMAYQUYETTIENEntities();
 
             var expectedProduct = new Product
             {
-                First = "first",
-                Last = "last",
-                Email = "mail@test.com"
+                
+                ProductName = "name",
+                ProductCode = "TVI0009",
+                OriginPrice = 5,
+                SalePrice = 6,
+                Quantity = 8,
+                InstallmentPrice = 10,
+                ProductTypeID = db.ProductTypes.First().ID
             };
 
             var mockContext = new Mock<ControllerContext>();
-            _repository.Setup(x => x.GetById(It.IsAny<int>())).Returns(expectedContact);
+            _repository.Setup(x => x.GetById(It.IsAny<int>())).Returns(expectedProduct);
 
             var controller = new ContactController(_repository.Object)
             {
