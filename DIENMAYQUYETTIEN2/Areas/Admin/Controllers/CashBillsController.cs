@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using DIENMAYQUYETTIEN2.Models;
 using System.Transactions;
+using System.Web.Security;
+using System.Web.Configuration;
 using DIENMAYQUYETTIEN2.Areas.Admin.Models;
 
 namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
@@ -21,15 +23,15 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         {
             var cashbill = db.CashBills.Include(b => b.CashBillDetails).ToList();
 
-            //if (Session["Username"] != null)
-            //{
-            //    return View(cashbill);
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Login");
-            //}
-            return View(cashbill);
+            if (Session["Username"] != null)
+            {
+                return View(cashbill);
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+            //return View(cashbill);
         }
 
 
@@ -90,8 +92,37 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             return View("Create");
         }
 
+        [HttpPost]
+        public ActionResult Login(Account acc)
+        {
+            if (ModelState.IsValid)
+            {
+                using (DIENMAYQUYETTIENEntities db = new DIENMAYQUYETTIENEntities())
+                {
+                    var obj = db.Accounts.Where(a => a.Username.Equals(acc.Username) && a.Password.Equals(acc.Password)).FirstOrDefault();
+
+                    if (obj != null)
+                    {
+                        Session["Username"] = obj.Username.ToString();
+                        Session["FullName"] = obj.FullName.ToString();
+                        return RedirectToAction("Index");
+                    }
+                }
+            }
+            return View(acc);
+        }
+
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            Session.Abandon(); // it will clear the session at the end of request
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
+
         // GET: Admin/CashBills/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {

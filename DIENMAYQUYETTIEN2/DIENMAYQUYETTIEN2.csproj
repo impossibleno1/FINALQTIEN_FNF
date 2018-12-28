@@ -83,24 +83,27 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -185,6 +188,8 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CashBillDetailsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CashBillsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InstallmentBillDetailsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InstallmentBillsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
     <Compile Include="Areas\Admin\Models\ReceiptModel.cs" />
     <Compile Include="Areas\Main\Controllers\ProductsController.cs" />
@@ -384,6 +389,17 @@
     <Content Include="Areas\Admin\Views\ProductAdmin\Login.cshtml" />
     <Content Include="Areas\Main\Views\Products\Login.cshtml" />
     <Content Include="Areas\Admin\Views\CashBills\Print.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBills\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBills\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBills\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBills\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBills\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBills\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBillDetails\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBillDetails\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBillDetails\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBillDetails\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBillDetails\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

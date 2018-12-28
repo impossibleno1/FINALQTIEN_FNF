@@ -15,7 +15,7 @@ using System.Web.Routing;
 namespace UnitTestProject1.Tests.Controllers
 {
     [TestClass]
-    public class UnitTest1
+    public class ProductAdminTest
     {
         [TestMethod]
         public void TestIndex()
@@ -111,43 +111,103 @@ namespace UnitTestProject1.Tests.Controllers
                 Assert.IsInstanceOfType(result1.ViewData["ProductTypeID"], typeof(SelectList));
             }
         }
-        //[TestMethod]
-        //public void TestEdit1()
-        //{
-        //    // arrange
-        //    var _repository = new Mock<IContactReponsory>();
-        //    var db = new DIENMAYQUYETTIENEntities();
+        [TestMethod]
+        public void TestEdit1()
+        {
+            // arrange
+            var db = new DIENMAYQUYETTIENEntities();
 
-        //    var expectedProduct = new Product
-        //    {
-                
-        //        ProductName = "name",
-        //        ProductCode = "TVI0009",
-        //        OriginPrice = 5,
-        //        SalePrice = 6,
-        //        Quantity = 8,
-        //        InstallmentPrice = 10,
-        //        ProductTypeID = db.ProductTypes.First().ID
-        //    };
+            var expectedProduct = db.Products.First();
 
-        //    var mockContext = new Mock<ControllerContext>();
-        //    _repository.Setup(x => x.GetById(It.IsAny<int>())).Returns(expectedProduct);
+            var controller = new ProductAdminController();
+            var session = new Mock<HttpSessionStateBase>();
+            var context = new Mock<HttpContextBase>();
+            //context.Setup(c => c.Session["Username"]).Returns("abc");
+            context.Setup(c => c.Session).Returns(session.Object);
+            controller.ControllerContext = new ControllerContext(context.Object, new RouteData(), controller);
+            session.Setup(s => s["Username"]).Returns("abc");
 
-        //    var controller = new ContactController(_repository.Object)
-        //    {
-        //        ControllerContext = mockContext.Object
-        //    };
+            // act
+            var result = controller.Edit(expectedProduct.ID) as ViewResult;
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result.ViewData["ProductTypeID"], typeof(SelectList));
+            //Assert.IsInstanceOfType(result.ViewBag.ProductTypes, typeof(List<ProductType>))
+        }
 
-        //    // act
-        //    var result = controller.Edit(1) as ViewResult;
-        //    var resultData = (Contact)result.ViewData.Model;
+        [TestMethod]
+        public void TestEdit2()
+        {
+            var db = new DIENMAYQUYETTIENEntities();
+            var controller = new ProductAdminController();
+            var expectedProduct = db.Products.AsNoTracking().First();
+            var context = new Mock<HttpContextBase>();
+            var request = new Mock<HttpRequestBase>();
+            var files = new Mock<HttpFileCollectionBase>();
+            var file = new Mock<HttpPostedFileBase>();
+            context.Setup(c => c.Request).Returns(request.Object);
+            request.Setup(r => r.Files).Returns(files.Object);
+            files.Setup(f => f["Avatar"]).Returns(file.Object);
+            file.Setup(f => f.ContentLength).Returns(1);
+            context.Setup(c => c.Server.MapPath("~/App_Data")).Returns("~/App_Data");
+            controller.ControllerContext = new ControllerContext(context.Object, new RouteData(), controller);
 
-        //    // assert
-        //    Assert.AreEqual("Edit", result.ViewName);
-        //    Assert.AreEqual(expectedContact.First, resultData.First);
-        //    Assert.AreEqual(expectedContact.Last, resultData.Last);
-        //    Assert.AreEqual(expectedContact.Email, resultData.Email);
-        //}
+            //var db = new DIENMAYQUYETTIENEntities();
+            //var model = new Product();
+            //model.ProductTypeID = db.ProductTypes.First().ID;
+            //model.ProductName = "TenSP";
+            //model.ProductCode = "TVI0001";
+            //model.OriginPrice = 123;
+            //model.SalePrice = 456;
+            //model.InstallmentPrice = 789;
+            //model.Quantity = 10;
+
+            using (var scope = new TransactionScope())
+            {
+                var result0 = controller.Edit(expectedProduct) as RedirectToRouteResult;
+                Assert.IsNotNull(result0);
+                //file.Verify(f => f.SaveAs(It.Is<string>(s => s.StartsWith("~/App_Data/"))));
+                Assert.AreEqual("Index", result0.RouteValues["action"]);
+
+                file.Setup(f => f.ContentLength).Returns(0);
+                var result1 = controller.Edit(expectedProduct) as RedirectToRouteResult;
+                Assert.IsNotNull(result1);
+                //Assert.IsInstanceOfType(result1.ViewData["ProductTypeID"], typeof(SelectList));
+
+            }
+        }
+
+        [TestMethod]
+        public void TestDelete()
+        {
+            var db = new DIENMAYQUYETTIENEntities();
+            var product = new Product
+            {
+                ProductName = "ProductName",
+                ProductTypeID = db.ProductTypes.First().ID,
+                SalePrice = 123,
+                OriginPrice = 123,
+                InstallmentPrice = 123,
+                Quantity = 123,
+                Avatar = ""
+            };
+
+            var controller = new ProductAdminController();
+            var context = new Mock<HttpContextBase>();
+            var session = new Mock<HttpSessionStateBase>();
+            session.Setup(s => s["Username"]).Returns("abc");
+            context.Setup(c => c.Session).Returns(session.Object);
+            controller.ControllerContext = new ControllerContext(context.Object, new RouteData(), controller);
+
+            using (var scope = new TransactionScope())
+            {
+                db.Products.Add(product);
+                db.SaveChanges();
+                var count = db.Products.Count();
+                var result2 = controller.DeleteConfirmed(product.ID) as RedirectToRouteResult;
+                Assert.IsNotNull(result2);
+                Assert.AreEqual(count - 1, db.Products.Count());
+            }
+        }
 
     }
 }
