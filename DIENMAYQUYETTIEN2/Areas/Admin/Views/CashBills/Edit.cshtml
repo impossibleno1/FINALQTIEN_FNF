@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.BillCode, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.BillCode, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.BillCode, new { @class = "form-control", @readonly = "readonly"})
                 @Html.ValidationMessageFor(model => model.BillCode)
             </div>
         </div>
@@ -82,7 +82,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-primary" />
-                <a title="Back" href="@Url.Action("Index")" class="btn btn-danger ">Back to list</a>
+                <a title="Back" href="@Url.Action("Index")" class="btn btn-danger " style="margin-left : 20em">Back to list</a>
             </div>
         </div>
     </div>

@@ -23,15 +23,15 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         {
             var cashbill = db.CashBills.Include(b => b.CashBillDetails).ToList();
 
-            if (Session["Username"] != null)
-            {
-                return View(cashbill);
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-            //return View(cashbill);
+            //if (Session["Username"] != null)
+            //{
+            //    return View(cashbill);
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Login");
+            //}
+            return View(cashbill);
         }
 
 
