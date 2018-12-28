@@ -115,7 +115,7 @@ namespace UnitTestProject1.Tests.Controllers
         public void TestEdit1()
         {
             // arrange
-            var _repository = new Mock<IC>();
+            var _repository = new Mock<IContactReponsory>();
             var db = new DIENMAYQUYETTIENEntities();
 
             var expectedProduct = new Product
