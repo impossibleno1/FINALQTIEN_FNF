@@ -24,6 +24,22 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             return PartialView(Session["ctcashBill"]);
         }
 
+        public PartialViewResult Editview()
+        {
+
+            var a = (Int32)Session["id"];
+            ViewBag.id = a;
+            var query = db.CashBillDetails.Where(cbd => cbd.BillID == a).ToList();
+            var b = query as List<CashBillDetail>;
+            var sum = 0;
+            foreach (var chiTiet in b)
+            {
+                sum += (chiTiet.Quantity * chiTiet.SalePrice);
+            }
+            Session["Tonggia"] = sum;
+            return PartialView(query);
+        }
+
         // GET: /Admin/CashBillDetails/Details/5
         public int SalePrice(int ProductID)
         {
@@ -62,7 +78,42 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductName", model.ProductID);
             return View("Create", model);
         }
+        public ActionResult CreateEdit(int id)
+        {
+            var a = (Int32)Session["id"];
+            ViewBag.id = a;
+            CashBillDetail cashbilldetail = db.CashBillDetails.Find(id);
+            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductCode");
+            //ViewBag.BillID = cashbilldetail.BillID;
+            //ViewBag.billid = cashbilldetail.BillID;
+            var model = new CashBillDetail();
+            model.BillID = id;
+            return View(model);
+        }
 
+        // POST: /CashBillDetails/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateEdit([Bind(Include = "ID,BillID,ProductID,Quantity,SalePrice")] CashBillDetail cashbilldetail)
+        {
+
+            
+            var a = (Int32)Session["id"];
+
+            if (ModelState.IsValid)
+            {
+
+                db.CashBillDetails.Add(cashbilldetail);
+                db.SaveChanges();
+                return RedirectToAction("Edit", "CashBills", new { id = a });
+            }
+
+            ViewBag.BillID = new SelectList(db.CashBills, "ID", "BillCode", cashbilldetail.BillID);
+            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductCode", cashbilldetail.ProductID);
+            return View(cashbilldetail);
+        }
         // GET: Admin/CashBillDetails/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -70,14 +121,14 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CashBillDetail cashBillDetail = db.CashBillDetails.Find(id);
-            if (cashBillDetail == null)
+            CashBillDetail cashbilldetail = db.CashBillDetails.Find(id);
+            if (cashbilldetail == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.BillID = new SelectList(db.CashBills, "ID", "BillCode", cashBillDetail.BillID);
-            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductCode", cashBillDetail.ProductID);
-            return View(cashBillDetail);
+            ViewBag.BillID = new SelectList(db.CashBills, "ID", "BillCode", cashbilldetail.BillID);
+            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductCode", cashbilldetail.ProductID);
+            return View(cashbilldetail);
         }
 
         // POST: Admin/CashBillDetails/Edit/5
@@ -85,17 +136,18 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BillID,ProductID,Quantity,SalePrice")] CashBillDetail cashBillDetail)
+        public ActionResult Edit([Bind(Include = "ID,BillID,ProductID,Quantity,SalePrice")] CashBillDetail cashbilldetail)
         {
+            var a = (Int32)Session["id"];
             if (ModelState.IsValid)
             {
-                db.Entry(cashBillDetail).State = EntityState.Modified;
+                db.Entry(cashbilldetail).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit", "CashBills", new { id = a });
             }
-            ViewBag.BillID = new SelectList(db.CashBills, "ID", "BillCode", cashBillDetail.BillID);
-            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductCode", cashBillDetail.ProductID);
-            return View(cashBillDetail);
+            ViewBag.BillID = new SelectList(db.CashBills, "ID", "BillCode", cashbilldetail.BillID);
+            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductCode", cashbilldetail.ProductID);
+            return View(cashbilldetail);
         }
 
         // GET: Admin/CashBillDetails/Delete/5
@@ -118,10 +170,11 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            var a = (Int32)Session["id"];
             CashBillDetail cashBillDetail = db.CashBillDetails.Find(id);
             db.CashBillDetails.Remove(cashBillDetail);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit", "CashBills", new { id = a });
         }
 
         protected override void Dispose(bool disposing)

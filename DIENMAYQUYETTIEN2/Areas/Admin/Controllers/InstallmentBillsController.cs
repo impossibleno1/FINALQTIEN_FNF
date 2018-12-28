@@ -62,15 +62,15 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                     var inscashBill = Session["InsCashBill"] as InstallmentBill;
                     var insctcashBill = Session["insctcashBill"] as List<InstallmentBill>;
 
-                    db.CashBills.Add(inscashBill);
+                   // db.CashBills.Add(inscashBill);
                     db.SaveChanges();
 
                     foreach (var chiTiet in insctcashBill)
                     {
-                        chiTiet. = cashBill.ID;
-                        chiTiet.Product = null;
-                        db.CashBillDetails.Add(chiTiet);
-                        cashBill.GrandTotal += (chiTiet.Quantity * chiTiet.SalePrice);
+                     //   chiTiet. = cashBill.ID;
+                       // chiTiet.Product = null;
+                        //db.CashBillDetails.Add(chiTiet);
+                        //cashBill.GrandTotal += (chiTiet.Quantity * chiTiet.SalePrice);
                     }
 
                     db.SaveChanges();

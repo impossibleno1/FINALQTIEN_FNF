@@ -400,6 +400,8 @@
     <Content Include="Areas\Admin\Views\InstallmentBillDetails\Details.cshtml" />
     <Content Include="Areas\Admin\Views\InstallmentBillDetails\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\InstallmentBillDetails\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBillDetails\Editview.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBillDetails\CreateEdit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

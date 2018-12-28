@@ -124,16 +124,32 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // GET: Admin/CashBills/Edit/5
         public ActionResult Edit(int? id)
         {
+            Session["id"] = id;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CashBill cashBill = db.CashBills.Find(id);
-            if (cashBill == null)
+
+            CashBill cashbill = db.CashBills.Find(id);
+
+
+            var query = db.CashBillDetails.Where(cbd => cbd.BillID == id).ToList();
+            var b = query as List<CashBillDetail>;
+            var sum = 0;
+            foreach (var chiTiet in b)
+            {
+                sum += (chiTiet.Quantity * chiTiet.SalePrice);
+            }
+            cashbill.GrandTotal = sum;
+
+
+            Session["CashBill"] = cashbill;
+            if (cashbill == null)
             {
                 return HttpNotFound();
             }
-            return View(cashBill);
+
+            return View(Session["CashBill"]);
         }
 
         // POST: Admin/CashBills/Edit/5
@@ -141,15 +157,16 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BillCode,CustomerName,PhoneNumber,Address,Date,Shipper,Note,GrandTotal")] CashBill cashBill)
+        public ActionResult Edit(CashBill model)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cashBill).State = EntityState.Modified;
+                db.Entry(model).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cashBill);
+
+            return View(model);
         }
 
         // GET: Admin/CashBills/Delete/5
