@@ -20,7 +20,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // GET: /Admin/ProductAdmin/
         public ActionResult Index()
         {
-            var product = db.Products.Include(b => b.ProductType);
+            var product = db.Products.Include(b => b.ProductType).ToList();
 
             if (Session["Username"] != null)
             {

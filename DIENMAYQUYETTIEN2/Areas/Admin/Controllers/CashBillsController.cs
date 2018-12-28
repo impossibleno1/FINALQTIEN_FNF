@@ -19,7 +19,17 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // GET: Admin/CashBills
         public ActionResult Index()
         {
-            return View(db.CashBills.ToList());
+            var cashbill = db.CashBills.Include(b => b.CashBillDetails).ToList();
+
+            //if (Session["Username"] != null)
+            //{
+            //    return View(cashbill);
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Login");
+            //}
+            return View(cashbill);
         }
 
 
