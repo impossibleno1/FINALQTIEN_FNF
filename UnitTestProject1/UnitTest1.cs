@@ -111,43 +111,43 @@ namespace UnitTestProject1.Tests.Controllers
                 Assert.IsInstanceOfType(result1.ViewData["ProductTypeID"], typeof(SelectList));
             }
         }
-        [TestMethod]
-        public void TestEdit1()
-        {
-            // arrange
-            var _repository = new Mock<IContactReponsory>();
-            var db = new DIENMAYQUYETTIENEntities();
+        //[TestMethod]
+        //public void TestEdit1()
+        //{
+        //    // arrange
+        //    var _repository = new Mock<IContactReponsory>();
+        //    var db = new DIENMAYQUYETTIENEntities();
 
-            var expectedProduct = new Product
-            {
+        //    var expectedProduct = new Product
+        //    {
                 
-                ProductName = "name",
-                ProductCode = "TVI0009",
-                OriginPrice = 5,
-                SalePrice = 6,
-                Quantity = 8,
-                InstallmentPrice = 10,
-                ProductTypeID = db.ProductTypes.First().ID
-            };
+        //        ProductName = "name",
+        //        ProductCode = "TVI0009",
+        //        OriginPrice = 5,
+        //        SalePrice = 6,
+        //        Quantity = 8,
+        //        InstallmentPrice = 10,
+        //        ProductTypeID = db.ProductTypes.First().ID
+        //    };
 
-            var mockContext = new Mock<ControllerContext>();
-            _repository.Setup(x => x.GetById(It.IsAny<int>())).Returns(expectedProduct);
+        //    var mockContext = new Mock<ControllerContext>();
+        //    _repository.Setup(x => x.GetById(It.IsAny<int>())).Returns(expectedProduct);
 
-            var controller = new ContactController(_repository.Object)
-            {
-                ControllerContext = mockContext.Object
-            };
+        //    var controller = new ContactController(_repository.Object)
+        //    {
+        //        ControllerContext = mockContext.Object
+        //    };
 
-            // act
-            var result = controller.Edit(1) as ViewResult;
-            var resultData = (Contact)result.ViewData.Model;
+        //    // act
+        //    var result = controller.Edit(1) as ViewResult;
+        //    var resultData = (Contact)result.ViewData.Model;
 
-            // assert
-            Assert.AreEqual("Edit", result.ViewName);
-            Assert.AreEqual(expectedContact.First, resultData.First);
-            Assert.AreEqual(expectedContact.Last, resultData.Last);
-            Assert.AreEqual(expectedContact.Email, resultData.Email);
-        }
+        //    // assert
+        //    Assert.AreEqual("Edit", result.ViewName);
+        //    Assert.AreEqual(expectedContact.First, resultData.First);
+        //    Assert.AreEqual(expectedContact.Last, resultData.Last);
+        //    Assert.AreEqual(expectedContact.Email, resultData.Email);
+        //}
 
     }
 }

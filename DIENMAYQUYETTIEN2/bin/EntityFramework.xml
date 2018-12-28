@@ -13485,7 +13485,7 @@
             <summary>
             Saves all changes made in this context to the underlying database.
             </summary>
-            <returns>
+            <returns> 
             The number of state entries written to the underlying database. This can include
             state entries for entities and/or relationships. Relationship state entries are created for 
             many-to-many relationships and relationships where there is no foreign key property
@@ -43191,12 +43191,12 @@
              </summary>
         </member>
         <member name="T:System.Data.Entity.Migrations.Model.IndexOperation">
-             <summary>
-             Common base class for operations affecting indexes.
-             Entity Framework Migrations APIs are not designed to accept input provided by untrusted sources 
-             (such as the end user of an application). If input is accepted from such sources it should be validated 
-             before being passed to these APIs to protect against SQL injection attacks etc.
-             </summary>
+            <summary>
+                Common base class for operations affecting indexes.
+                Entity Framework Migrations APIs are not designed to accept input provided by untrusted sources
+                (such as the end user of an application). If input is accepted from such sources it should be validated
+                before being passed to these APIs to protect against SQL injection attacks etc.
+            </summary>
         </member>
         <member name="M:System.Data.Entity.Migrations.Model.IndexOperation.BuildDefaultName(System.Collections.Generic.IEnumerable{System.String})">
             <summary>
@@ -43206,46 +43206,46 @@
             <returns>A default index name.</returns>
         </member>
         <member name="M:System.Data.Entity.Migrations.Model.IndexOperation.#ctor(System.Object)">
-             <summary>
-             Initializes a new instance of the IndexOperation class.
-             Entity Framework Migrations APIs are not designed to accept input provided by untrusted sources 
-             (such as the end user of an application). If input is accepted from such sources it should be validated 
-             before being passed to these APIs to protect against SQL injection attacks etc.
-             </summary>
+            <summary>
+                Initializes a new instance of the IndexOperation class.
+                Entity Framework Migrations APIs are not designed to accept input provided by untrusted sources
+                (such as the end user of an application). If input is accepted from such sources it should be validated
+                before being passed to these APIs to protect against SQL injection attacks etc.
+            </summary>
             <param name="anonymousArguments">
                 Additional arguments that may be processed by providers. Use anonymous type syntax to
                 specify arguments e.g. 'new { SampleArgument = "MyValue" }'.
             </param>
         </member>
         <member name="P:System.Data.Entity.Migrations.Model.IndexOperation.Table">
-             <summary>
-             Gets or sets the table the index belongs to.
-             Entity Framework Migrations APIs are not designed to accept input provided by untrusted sources 
-             (such as the end user of an application). If input is accepted from such sources it should be validated 
-             before being passed to these APIs to protect against SQL injection attacks etc.
-             </summary>
+            <summary>
+                Gets or sets the table the index belongs to.
+                Entity Framework Migrations APIs are not designed to accept input provided by untrusted sources
+                (such as the end user of an application). If input is accepted from such sources it should be validated
+                before being passed to these APIs to protect against SQL injection attacks etc.
+            </summary>
         </member>
         <member name="P:System.Data.Entity.Migrations.Model.IndexOperation.Columns">
             <summary>
-            Gets the columns that are indexed.
-            Entity Framework Migrations APIs are not designed to accept input provided by untrusted sources 
-            (such as the end user of an application). If input is accepted from such sources it should be validated 
-            before being passed to these APIs to protect against SQL injection attacks etc.
+                Gets the columns that are indexed.
+                Entity Framework Migrations APIs are not designed to accept input provided by untrusted sources
+                (such as the end user of an application). If input is accepted from such sources it should be validated
+                before being passed to these APIs to protect against SQL injection attacks etc.
             </summary>
         </member>
         <member name="P:System.Data.Entity.Migrations.Model.IndexOperation.HasDefaultName">
             <summary>
-            Gets a value indicating if a specific name has been supplied for this index.
+                Gets a value indicating if a specific name has been supplied for this index.
             </summary>
         </member>
         <member name="P:System.Data.Entity.Migrations.Model.IndexOperation.Name">
-             <summary>
-             Gets or sets the name of this index.
-             If no name is supplied, a default name will be calculated.
-             Entity Framework Migrations APIs are not designed to accept input provided by untrusted sources 
-             (such as the end user of an application). If input is accepted from such sources it should be validated 
-             before being passed to these APIs to protect against SQL injection attacks etc.
-             </summary>
+            <summary>
+                Gets or sets the name of this index.
+                If no name is supplied, a default name will be calculated.
+                Entity Framework Migrations APIs are not designed to accept input provided by untrusted sources
+                (such as the end user of an application). If input is accepted from such sources it should be validated
+                before being passed to these APIs to protect against SQL injection attacks etc.
+            </summary>
         </member>
         <member name="M:System.Data.Entity.Migrations.Model.CreateIndexOperation.#ctor(System.Object)">
              <summary>
@@ -50998,8 +50998,8 @@
         </member>
         <member name="T:System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration">
             <summary>
-            Allows the conventions used by a <see cref="T:System.Data.Entity.DbModelBuilder"/> instance to be customized.
-            The default conventions can be found in the System.Data.Entity.ModelConfiguration.Conventions namespace.
+                Allows the conventions used by a <see cref="T:System.Data.Entity.DbModelBuilder"/> instance to be customized.
+                The default conventions can be found in the System.Data.Entity.ModelConfiguration.Conventions namespace.
             </summary>
         </member>
         <member name="M:System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.AddFromAssembly(System.Reflection.Assembly)">
@@ -51015,41 +51015,41 @@
         </member>
         <member name="M:System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.Add(System.Data.Entity.ModelConfiguration.Conventions.IConvention[])">
             <summary>
-            Enables one or more conventions for the <see cref="T:System.Data.Entity.DbModelBuilder"/>.
+                Enables one or more conventions for the <see cref="T:System.Data.Entity.DbModelBuilder"/>.
             </summary>
             <param name="conventions"> The conventions to be enabled. </param>
         </member>
         <member name="M:System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.Add``1">
             <summary>
-            Enables a convention for the <see cref="T:System.Data.Entity.DbModelBuilder"/>.
+                Enables a convention for the <see cref="T:System.Data.Entity.DbModelBuilder"/>.
             </summary>
             <typeparam name="TConvention"> The type of the convention to be enabled. </typeparam>
         </member>
         <member name="M:System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.AddAfter``1(System.Data.Entity.ModelConfiguration.Conventions.IConvention)">
             <summary>
-            Enables a convention for the <see cref="T:System.Data.Entity.DbModelBuilder"/>. This convention
-            will run after the one specified.
+                Enables a convention for the <see cref="T:System.Data.Entity.DbModelBuilder"/>. This convention
+                will run after the one specified.
             </summary>
             <typeparam name="TExistingConvention"> The type of the convention after which the enabled one will run. </typeparam>
             <param name="newConvention"> The convention to enable. </param>
         </member>
         <member name="M:System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.AddBefore``1(System.Data.Entity.ModelConfiguration.Conventions.IConvention)">
             <summary>
-            Enables a configuration convention for the <see cref="T:System.Data.Entity.DbModelBuilder"/>. This convention
-            will run before the one specified.
+                Enables a configuration convention for the <see cref="T:System.Data.Entity.DbModelBuilder"/>. This convention
+                will run before the one specified.
             </summary>
             <typeparam name="TExistingConvention"> The type of the convention before which the enabled one will run. </typeparam>
             <param name="newConvention"> The convention to enable. </param>
         </member>
         <member name="M:System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.Remove(System.Data.Entity.ModelConfiguration.Conventions.IConvention[])">
             <summary>
-            Disables one or more conventions for the <see cref="T:System.Data.Entity.DbModelBuilder"/>.
+                Disables one or more conventions for the <see cref="T:System.Data.Entity.DbModelBuilder"/>.
             </summary>
             <param name="conventions"> The conventions to be disabled. </param>
         </member>
         <member name="M:System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.Remove``1">
             <summary>
-            Disables a convention for the <see cref="T:System.Data.Entity.DbModelBuilder"/>.
+                Disables a convention for the <see cref="T:System.Data.Entity.DbModelBuilder"/>.
                 The default conventions that are available for removal can be found in the
                 System.Data.Entity.ModelConfiguration.Conventions namespace.
             </summary>
@@ -51066,7 +51066,7 @@
         </member>
         <member name="M:System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.GetType">
             <summary>
-            Gets the <see cref="T:System.Type"/> of the current instance.
+                Gets the <see cref="T:System.Type"/> of the current instance.
             </summary>
             <returns>The exact runtime type of the current instance.</returns>
         </member>
