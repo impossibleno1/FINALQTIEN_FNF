@@ -7,9 +7,6 @@
 
 <h2 style="padding-top: 20px; text-align: center; width: 80%;" class="title">Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table" style="width: 80%;">
     <tr>
         <th>
@@ -42,9 +39,15 @@
             @Html.DisplayFor(modelItem => item.Product.ProductCode)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            <a title="Sửa" href="@Url.Action("Edit", new { id = item.ID})">
+                <i class="fas fa-edit"></i>
+            </a> &nbsp;|&nbsp;
+            <a title="Chi tiết " href="@Url.Action("Detail", new { id = item.ID})">
+                <i class="fas fa-info"></i>
+            </a> &nbsp;|&nbsp;
+            <a title="Xóa" href="@Url.Action("Delete", new { id = item.ID})">
+                <i class="fas fa-trash-alt"></i>
+            </a>
         </td>
     </tr>
 }
