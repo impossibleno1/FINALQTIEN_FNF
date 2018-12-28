@@ -30,6 +30,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             {
                 return RedirectToAction("Login");
             }
+            //return View(product);
 
         }
         //create
@@ -46,6 +47,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             {
                 return RedirectToAction("Login");
             }
+            //return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

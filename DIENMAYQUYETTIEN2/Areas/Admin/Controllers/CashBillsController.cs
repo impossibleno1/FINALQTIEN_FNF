@@ -62,6 +62,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                     chiTiet.BillID = cashBill.ID;
                     chiTiet.Product = null;
                     db.CashBillDetails.Add(chiTiet);
+                    cashBill.GrandTotal += (chiTiet.Quantity * chiTiet.SalePrice);
                 }
 
                 db.SaveChanges();

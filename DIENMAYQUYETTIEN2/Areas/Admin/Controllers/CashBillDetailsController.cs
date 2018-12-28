@@ -25,7 +25,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         }
 
         // GET: /Admin/CashBillDetails/Details/5
-        public int DonGiaBan(int ProductID)
+        public int SalePrice(int ProductID)
         {
             return db.Products.Find(ProductID).SalePrice;
         }
