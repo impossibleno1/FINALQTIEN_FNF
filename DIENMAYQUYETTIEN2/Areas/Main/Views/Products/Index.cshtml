@@ -326,7 +326,7 @@
             @foreach (var item in Model)
             {
                 <div class="grid_1_of_4 images_1_of_4" style="margin: 10px;">
-                    <a href="preview-3.html"><img src="@Url.Action("Details", new { id = item.ID })" alt="@item.ProductName" style="width: 300px; height: 300px; min-height: 300px; min-width: 300px;" /></a>
+                    <a href="preview-3.html"><img src="@Url.Action("Details", new { id = item.ID })" alt="@item.ProductName" style="width: 100%; height: 300px; min-height: 300px; min-width: 100%;" /></a>
                     <h2>@item.ProductName</h2>
                     <p><span class="strike">@item.SalePrice đ</span><span class="price">@item.SalePrice đ</span></p>
                     <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-3.html" class="cart-button">Add to Cart</a></span> </div>
@@ -354,7 +354,7 @@
             @foreach (var item in Model)
             {
                 <div class="grid_1_of_4 images_1_of_4" style="margin: 10px;">
-                    <a href="preview-3.html"><img src="@Url.Action("Details", new { id = item.ID })" alt="@item.ProductName" style="width: 300px; height: 300px; min-height: 300px; min-width: 300px;" /></a>
+                    <a href="preview-3.html"><img src="@Url.Action("Details", new { id = item.ID })" alt="@item.ProductName" style="width: 100%; height: 300px; min-height: 300px; min-width: 100%;" /></a>
                     <h2>@item.ProductName</h2>
                     <p><span class="strike">@item.SalePrice đ</span><span class="price">@item.SalePrice đ</span></p>
                     <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-3.html" class="cart-button">Add to Cart</a></span> </div>
