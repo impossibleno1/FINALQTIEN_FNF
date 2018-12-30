@@ -130,9 +130,9 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            CashBill cashbill = db.CashBills.Find(id);
+            CashBill cashbill2 = db.CashBills.Find(id);
 
-
+            
             var query = db.CashBillDetails.Where(cbd => cbd.BillID == id).ToList();
             var b = query as List<CashBillDetail>;
             var sum = 0;
@@ -140,16 +140,18 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             {
                 sum += (chiTiet.Quantity * chiTiet.SalePrice);
             }
-            cashbill.GrandTotal = sum;
+            cashbill2.GrandTotal = sum;
 
 
-            Session["CashBill"] = cashbill;
-            if (cashbill == null)
+            Session["CashBill2"] = cashbill2;
+            if (cashbill2 == null)
             {
                 return HttpNotFound();
             }
+            
+            
 
-            return View(Session["CashBill"]);
+            return View(Session["CashBill2"]);
         }
 
         // POST: Admin/CashBills/Edit/5

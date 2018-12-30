@@ -20,20 +20,22 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         {
             var inscashbill = db.InstallmentBills.Include(b => b.InstallmentBillDetails).ToList();
 
-            if (Session["Username"] != null)
-            {
-                return View(inscashbill);
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
+            //if (Session["Username"] != null)
+            //{
+            //    return View(inscashbill);
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Login");
+            //}
+            return View(inscashbill);
         }
 
         // GET: Admin/InstallmentBills/Create
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "CustomerName");
             return View(Session["InsCashBill"]);
         }
 
@@ -44,11 +46,14 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(InstallmentBill model)
         {
+            
             if (ModelState.IsValid)
             {
+                
                 Session["InsCashBill"] = model;
+                
             }
-
+            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "CustomerName", model.CustomerID);
             return View(model);
         }
 
@@ -56,34 +61,36 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create2()
         {
+            
             using (var scope = new TransactionScope())
                 try
                 {
-                    var inscashBill = Session["InsCashBill"] as InstallmentBill;
-                    var insctcashBill = Session["insctcashBill"] as List<InstallmentBill>;
+                    var inscashBill = Session["InsCashBill"] as CashBill;
+                    var ctinscashBill = Session["insctcashBill"] as List<CashBillDetail>;
 
-                   // db.CashBills.Add(inscashBill);
+                    db.CashBills.Add(inscashBill);
                     db.SaveChanges();
 
-                    foreach (var chiTiet in insctcashBill)
+                    foreach (var chiTiet in ctinscashBill)
                     {
-                     //   chiTiet. = cashBill.ID;
-                       // chiTiet.Product = null;
-                        //db.CashBillDetails.Add(chiTiet);
-                        //cashBill.GrandTotal += (chiTiet.Quantity * chiTiet.SalePrice);
+                        chiTiet.BillID = inscashBill.ID;
+                        chiTiet.Product = null;
+                        db.CashBillDetails.Add(chiTiet);
+                        
                     }
 
                     db.SaveChanges();
                     scope.Complete();
 
-                    Session["CashBill"] = null;
-                    Session["ctcashBill"] = null;
+                    Session["InsCashBill"] = null;
+                    Session["insctcashBill"] = null;
                     return RedirectToAction("Index");
                 }
                 catch (Exception e)
                 {
                     ModelState.AddModelError("", e.Message);
                 }
+            
             return View("Create");
         }
 
