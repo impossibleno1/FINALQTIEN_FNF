@@ -109,7 +109,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                         return RedirectToAction("Index");
                     }
                     
-                    if (obj2 != null)
+                    if (obj != null)
                     {
                         Session["Username"] = obj.Username.ToString();
                         Session["FullName"] = obj.FullName.ToString();
@@ -151,8 +151,8 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             cashbill2.GrandTotal = sum;
 
 
-            Session["CashBill"] = cashbill;
-            if (cashbill == null)
+            Session["CashBill"] = cashbill2;
+            if (cashbill2 == null)
             {
                 return HttpNotFound();
             }
