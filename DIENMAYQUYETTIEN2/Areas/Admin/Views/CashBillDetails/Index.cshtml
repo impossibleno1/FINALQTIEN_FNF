@@ -5,9 +5,9 @@
     Layout = "~/Areas/Admin/Views/Shared/_Admin_Layout.cshtml";
 }
 
-<h2 style="padding-top: 20px; text-align: center; width: 80%;" class="title">Index</h2>
+<h2>Index</h2>
 
-<table class="table" style="width: 80%;">
+<table class="table" style="width: 80%; " >
     <tr>
         <th>
             Quantity
@@ -39,12 +39,6 @@
             @(item.Quantity * item.SalePrice)
         </td>
         <td>
-            <a title="Sửa" href="@Url.Action("Edit", new { id = item.ID})">
-                <i class="fas fa-edit"></i>
-            </a> &nbsp;|&nbsp;
-            <a title="Chi tiết " href="@Url.Action("Detail", new { id = item.ID})">
-                <i class="fas fa-info"></i>
-            </a> &nbsp;|&nbsp;
             <a title="Xóa" href="@Url.Action("Delete", new { id = item.ID})">
                 <i class="fas fa-trash-alt"></i>
             </a>

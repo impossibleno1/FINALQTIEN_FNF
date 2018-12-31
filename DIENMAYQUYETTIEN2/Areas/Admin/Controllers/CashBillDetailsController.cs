@@ -113,7 +113,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateEdit([Bind(Include = "ID,BillID,ProductID,Quantity,SalePrice")] CashBillDetail cashbilldetail)
+        public ActionResult CreateEdit( CashBillDetail cashbilldetail)
         {
 
             
@@ -125,6 +125,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                 db.CashBillDetails.Add(cashbilldetail);
                 db.SaveChanges();
                 return RedirectToAction("Edit", "CashBills", new { id = a });
+                
             }
 
             ViewBag.BillID = new SelectList(db.CashBills, "ID", "BillCode", cashbilldetail.BillID);
@@ -153,7 +154,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BillID,ProductID,Quantity,SalePrice")] CashBillDetail cashbilldetail)
+        public ActionResult Edit( CashBillDetail cashbilldetail)
         {
             var a = (Int32)Session["id"];
             if (ModelState.IsValid)

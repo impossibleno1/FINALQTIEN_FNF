@@ -17,31 +17,25 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // GET: Admin/InstallmentBillDetails
         public ActionResult Index()
         {
-            var installmentBillDetails = db.InstallmentBillDetails.Include(i => i.InstallmentBill).Include(i => i.Product);
-            return View(installmentBillDetails.ToList());
-        }
-
-        // GET: Admin/InstallmentBillDetails/Details/5
-        public ActionResult Details(int? id)
+            if (Session["insctcashBill"] == null)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                Session["insctcashBill"] = new List<InstallmentBillDetail>();
             }
-            InstallmentBillDetail installmentBillDetail = db.InstallmentBillDetails.Find(id);
-            if (installmentBillDetail == null)
-            {
-                return HttpNotFound();
-            }
-            return View(installmentBillDetail);
+            return PartialView(Session["insctcashBill"]);
         }
-
         // GET: Admin/InstallmentBillDetails/Create
         public ActionResult Create()
+            {
+            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductName");
+            var model = new InstallmentBillDetail();
+            model.ID = 0;
+            model.Quantity = 1;
+            return PartialView(model);
+            }
+
+        public int InstallmentPrice(int ProductID)
         {
-            ViewBag.BillID = new SelectList(db.InstallmentBills, "ID", "BillCode");
-            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductCode");
-            return View();
+            return db.InstallmentBillDetails.Find(ProductID).InstallmentPrice;
         }
 
         // POST: Admin/InstallmentBillDetails/Create
@@ -49,18 +43,22 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BillID,ProductID,Quantity,InstallmentPrice")] InstallmentBillDetail installmentBillDetail)
+        public ActionResult Create2(InstallmentBillDetail model)
         {
             if (ModelState.IsValid)
             {
-                db.InstallmentBillDetails.Add(installmentBillDetail);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                model.ID = Environment.TickCount;
+                model.Product = db.Products.Find(model.ProductID);
+                var ctinscashBill = Session["insctcashBill"] as List<InstallmentBillDetail>;
+                if (ctinscashBill == null)
+                    ctinscashBill = new List<InstallmentBillDetail>();
+                ctinscashBill.Add(model);
+                Session["insctcashBill"] = ctinscashBill;
+                return RedirectToAction("Create", "InstallmentBills");
             }
 
-            ViewBag.BillID = new SelectList(db.InstallmentBills, "ID", "BillCode", installmentBillDetail.BillID);
-            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductCode", installmentBillDetail.ProductID);
-            return View(installmentBillDetail);
+            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductName", model.ProductID);
+            return View("Create", model);
         }
 
         // GET: Admin/InstallmentBillDetails/Edit/5

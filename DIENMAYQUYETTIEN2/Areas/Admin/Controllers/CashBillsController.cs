@@ -101,7 +101,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                 {
                     var admin = "admin";
                     var obj = db.Accounts.Where(a => a.Username.Equals(acc.Username) && a.Password.Equals(acc.Password)).FirstOrDefault();
-                    
+
                     if (obj != null)
                     {
                         Session["Username"] = obj.Username.ToString();
@@ -138,7 +138,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            CashBill cashbill = db.CashBills.Find(id);
+            CashBill cashbill2 = db.CashBills.Find(id);
 
 
             var query = db.CashBillDetails.Where(cbd => cbd.BillID == id).ToList();
@@ -148,16 +148,16 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             {
                 sum += (chiTiet.Quantity * chiTiet.SalePrice);
             }
-            cashbill.GrandTotal = sum;
+            cashbill2.GrandTotal = sum;
 
 
-            Session["CashBills"] = cashbill;
+            Session["CashBill"] = cashbill;
             if (cashbill == null)
             {
                 return HttpNotFound();
             }
 
-            return View(Session["CashBills"]);
+            return View(Session["CashBill"]);
         }
 
         // POST: Admin/CashBills/Edit/5
