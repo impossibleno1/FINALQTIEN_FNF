@@ -83,11 +83,28 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             var a = (Int32)Session["id"];
             ViewBag.id = a;
             CashBillDetail cashbilldetail = db.CashBillDetails.Find(id);
-            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductCode");
-            //ViewBag.BillID = cashbilldetail.BillID;
-            //ViewBag.billid = cashbilldetail.BillID;
+
+            //var query = db.CashBillDetails.Where(cbd => cbd.ID == id).ToList();
+            //var b = query as List<CashBillDetail>;
+            //var idpd = 0 ;
+            //foreach (var chiTiet in b)
+            //{
+            //     idpd = chiTiet.ProductID;
+            //}
+            //var query2 = db.Products.Where(cbd => cbd.ID == idpd).ToList();
+            //var c = query2 as List<Product>;
+            //var orgprice = 0;
+            //foreach (var chiTiet in c)
+            //{
+            //    orgprice = chiTiet.OriginPrice;
+            //}
+            
+            
+            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductName");
+
             var model = new CashBillDetail();
             model.BillID = id;
+            model.Quantity = 1;
             return View(model);
         }
 

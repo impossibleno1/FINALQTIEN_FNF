@@ -110,11 +110,12 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                 {
                     var obj = db.Accounts.Where(a => a.Username.Equals(acc.Username) && a.Password.Equals(acc.Password)).FirstOrDefault();
 
-                    if (obj != null)
+                    if (obj != null )
                     {
-                        Session["Username"] = obj.Username.ToString();
-                        Session["FullName"] = obj.FullName.ToString();
-                        return RedirectToAction("Index");
+                            Session["Username"] = obj.Username.ToString();
+                            Session["FullName"] = obj.FullName.ToString();
+                            return RedirectToAction("Create");
+                                  
                     }
                 }
             }

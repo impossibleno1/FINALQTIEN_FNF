@@ -99,9 +99,17 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             {
                 using (DIENMAYQUYETTIENEntities db = new DIENMAYQUYETTIENEntities())
                 {
+                    var admin = "admin";
                     var obj = db.Accounts.Where(a => a.Username.Equals(acc.Username) && a.Password.Equals(acc.Password)).FirstOrDefault();
-
+                    
                     if (obj != null)
+                    {
+                        Session["Username"] = obj.Username.ToString();
+                        Session["FullName"] = obj.FullName.ToString();
+                        return RedirectToAction("Index");
+                    }
+                    
+                    if (obj2 != null)
                     {
                         Session["Username"] = obj.Username.ToString();
                         Session["FullName"] = obj.FullName.ToString();
@@ -143,13 +151,13 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             cashbill.GrandTotal = sum;
 
 
-            Session["CashBill"] = cashbill;
+            Session["CashBills"] = cashbill;
             if (cashbill == null)
             {
                 return HttpNotFound();
             }
 
-            return View(Session["CashBill"]);
+            return View(Session["CashBills"]);
         }
 
         // POST: Admin/CashBills/Edit/5

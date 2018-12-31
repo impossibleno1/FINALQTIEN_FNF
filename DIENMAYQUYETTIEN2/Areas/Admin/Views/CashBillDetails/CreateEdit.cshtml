@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ProductID, "ProductID", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ProductID, "ProductName", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ProductID", String.Empty)
                 @Html.ValidationMessageFor(model => model.ProductID)
@@ -63,6 +63,17 @@
 </div>
 
 @section Scripts {
+    <script>
+    $('#ProductID').change(function () {
+            var url = '@Url.Action("SalePrice", "CashBillDetails")';
+        url = url + '?ProductID=' + $(this).val();
+        $.get(url, function (data) {
+                $('#SalePrice').val(data);
+        });
+    })
+
+    </script>
+
     @Scripts.Render("~/bundles/jqueryval")
 }
 
