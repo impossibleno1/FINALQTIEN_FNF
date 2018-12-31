@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\DIENMAYQUYETTIEN2.dll.config
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\DIENMAYQUYETTIEN2.dll
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\DIENMAYQUYETTIEN2.pdb
@@ -25,6 +24,7 @@ G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Owin.d
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Runtime.CompilerServices.Unsafe.dll
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Threading.Tasks.Extensions.dll
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Helpers.dll
+G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Mvc.dll
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Optimization.dll
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Razor.dll
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.Deployment.dll
@@ -41,6 +41,7 @@ G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Newton
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Runtime.CompilerServices.Unsafe.xml
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Threading.Tasks.Extensions.xml
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Helpers.xml
+G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Mvc.xml
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Razor.xml
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.xml
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.Deployment.xml
@@ -59,113 +60,6 @@ G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Micros
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Google.xml
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Twitter.xml
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.csprojResolveAssemblyReference.cache
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.dll
 G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.pdb
-G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.csprojResolveAssemblyReference.cache
-G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Mvc.dll
-G:\CMUVLU\CMUV-nam3-hk1\FINALPROJECT\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Mvc.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.csprojResolveAssemblyReference.cache
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\DIENMAYQUYETTIEN2.dll.config
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\DIENMAYQUYETTIEN2.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\DIENMAYQUYETTIEN2.pdb
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Antlr3.Runtime.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.Core.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.Owin.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Host.SystemWeb.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Cookies.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Facebook.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Google.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.OAuth.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Twitter.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Web.Infrastructure.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Owin.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Optimization.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\WebGrease.dll
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\EntityFramework.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\EntityFramework.SqlServer.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Newtonsoft.Json.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Helpers.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Mvc.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Razor.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.Deployment.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.Razor.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\System.Web.Optimization.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Antlr3.Runtime.pdb
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.Core.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.Owin.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Host.SystemWeb.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Facebook.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Cookies.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.OAuth.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Google.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Twitter.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Studies\VLU\Year-3\OOAD\final\FINALQTIEN_FNF\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.pdb
-=======
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\DIENMAYQUYETTIEN2.dll.config
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\DIENMAYQUYETTIEN2.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\DIENMAYQUYETTIEN2.pdb
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Antlr3.Runtime.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\EntityFramework.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\EntityFramework.SqlServer.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Newtonsoft.Json.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Owin.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.Helpers.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.Mvc.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.Optimization.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.Razor.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.Razor.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\WebGrease.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.Helpers.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.Mvc.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.Optimization.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.Razor.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\System.Web.WebPages.Razor.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Newtonsoft.Json.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Antlr3.Runtime.pdb
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\EntityFramework.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\EntityFramework.SqlServer.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.csproj.CoreCompileInputs.cache
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.csproj.CopyComplete
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.dll
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.pdb
-C:\Users\Bich Thuan\Desktop\FINALQTIEN_FNF-master\DIENMAYQUYETTIEN2\obj\Debug\DIENMAYQUYETTIEN2.csprojAssemblyReference.cache
->>>>>>> tam

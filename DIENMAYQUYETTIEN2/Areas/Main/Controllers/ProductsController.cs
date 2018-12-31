@@ -102,9 +102,9 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
 
                     if (obj != null)
                     {
-                        Session["Username"] = obj.Username.ToString();
-                        Session["FullName"] = obj.FullName.ToString();
-                        return RedirectToAction("Index");
+                        Session["Usernameus"] = obj.Username.ToString();
+                        Session["FullNameus"] = obj.FullName.ToString();
+                        return RedirectToAction("Index","Products");
                     }
                 }
             }
