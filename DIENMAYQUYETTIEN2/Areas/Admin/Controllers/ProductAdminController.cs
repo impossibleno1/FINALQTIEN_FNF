@@ -114,7 +114,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                     {
                             Session["Username"] = obj.Username.ToString();
                             Session["FullName"] = obj.FullName.ToString();
-                            return RedirectToAction("Create");
+                            return RedirectToAction("Index");
                                   
                     }
                 }

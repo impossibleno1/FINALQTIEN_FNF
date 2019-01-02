@@ -60,6 +60,71 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductName", model.ProductID);
             return View("Create", model);
         }
+        public PartialViewResult Editviewi()
+        {
+
+            var a = (Int32)Session["idi"];
+            ViewBag.id = a;
+            var query = db.InstallmentBillDetails.Where(cbd => cbd.BillID == a).ToList();
+            var b = query as List<InstallmentBillDetail>;
+            var sum = 0;
+            foreach (var chiTiet in b)
+            {
+                sum += (chiTiet.Quantity * chiTiet.InstallmentPrice);
+            }
+            Session["Tonggia"] = sum;
+            return PartialView(query);
+        }
+        public ActionResult CreateEditI(int id)
+        {
+            var a = (Int32)Session["idi"];
+            ViewBag.id = a;
+            InstallmentBillDetail inscashbilldetail = db.InstallmentBillDetails.Find(id);
+
+            //var query = db.CashBillDetails.Where(cbd => cbd.ID == id).ToList();
+            //var b = query as List<CashBillDetail>;
+            //var idpd = 0 ;
+            //foreach (var chiTiet in b)
+            //{
+            //     idpd = chiTiet.ProductID;
+            //}
+            //var query2 = db.Products.Where(cbd => cbd.ID == idpd).ToList();
+            //var c = query2 as List<Product>;
+            //var orgprice = 0;
+            //foreach (var chiTiet in c)
+            //{
+            //    orgprice = chiTiet.OriginPrice;
+            //}
+
+
+            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductName");
+
+            var model = new InstallmentBillDetail();
+            model.BillID = id;
+            model.Quantity = 1;
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateEditI(InstallmentBillDetail ibilldetail)
+        {
+
+
+            var a = (Int32)Session["idi"];
+
+            if (ModelState.IsValid)
+            {
+
+                db.InstallmentBillDetails.Add(ibilldetail);
+                db.SaveChanges();
+                return RedirectToAction("Edit", "InstallmentBills", new { id = a });
+
+            }
+
+            ViewBag.BillID = new SelectList(db.CashBills, "ID", "BillCode", ibilldetail.BillID);
+            ViewBag.ProductID = new SelectList(db.Products, "ID", "ProductCode", ibilldetail.ProductID);
+            return View(ibilldetail);
+        }
 
         // GET: Admin/InstallmentBillDetails/Edit/5
         public ActionResult Edit(int? id)

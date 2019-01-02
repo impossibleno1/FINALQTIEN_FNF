@@ -117,7 +117,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             Session.Clear();
             Session.Abandon(); // it will clear the session at the end of request
             FormsAuthentication.SignOut();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index");
         }
 
         [HttpGet]

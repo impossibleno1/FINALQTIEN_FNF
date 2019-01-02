@@ -109,12 +109,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                         return RedirectToAction("Index");
                     }
                     
-                    if (obj != null)
-                    {
-                        Session["Username"] = obj.Username.ToString();
-                        Session["FullName"] = obj.FullName.ToString();
-                        return RedirectToAction("Index");
-                    }
+                    
                 }
             }
             return View(acc);

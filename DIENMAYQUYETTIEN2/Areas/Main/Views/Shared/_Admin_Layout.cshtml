@@ -183,15 +183,23 @@
                         <li><a href="#">Delivery</a></li>
                         <li><a href="faq.html">Faqs</a></li>
                         <li><a href="contact.html">CONTACT</a></li>
-                        <li style="float:right">
-                            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-
-                                @if (Session["FullNameus"] != null)
+                        <li style="float:right ;">
+                            @if (Session["FullNameus"] != null)
                                 {
-                                    @Session["FullNameus"].ToString();
-                                }
+                            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                                @Session["FullNameus"].ToString()
                                 <i class="fas fa-sign-out-alt"></i>
                             </a>
+
+                        }
+                        else
+                        {
+                            using (Html.BeginForm("Login", "Products", FormMethod.Post))
+                            {
+                                    <input style="margin: 12px 15px 5px 0px;" type="submit" value="Login" class="btn btn-default" />
+                                }
+                            }
+                                
                         </li>
                         <div class="clear"> </div>
 

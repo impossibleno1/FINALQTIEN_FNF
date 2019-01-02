@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    Layout = "~/Areas/Admin/Views/Shared/_Admin_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -55,9 +56,9 @@
             @Html.AntiForgeryToken()
     
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
-            </div>
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a title="Back" href="javascript:history.back()" class="btn btn-danger">Cancel</a>
+        </div>
         }
     </div>
 </body>

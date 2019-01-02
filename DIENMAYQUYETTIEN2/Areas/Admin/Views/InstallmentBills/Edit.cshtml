@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    Layout = "~/Areas/Admin/Views/Shared/_Admin_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -107,6 +108,7 @@
                     <input type="submit" value="Save" class="btn btn-default" />
                 </div>
             </div>
+            @Html.Action("EditviewI", "InstallmentBillDetails")
         </div>
     }
     
