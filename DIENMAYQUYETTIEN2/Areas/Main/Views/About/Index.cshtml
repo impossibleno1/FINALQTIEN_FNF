@@ -1,0 +1,194 @@
+﻿@model DIENMAYQUYETTIEN2.Models.Contact
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Main/Views/Shared/_Admin_Layout.cshtml";
+}
+<head>
+    <title>Free Smart Store Website Template | Contact :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="js/jquery.min.js"></script>
+    <link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="header_top">
+                <div class="logo">
+                    <a href="index.png"><img src="images/logo.png" alt="" /></a>
+                </div>
+                <div class="header_top_right">
+                    <div class="search_box">
+                        <form>
+                            <input type="text" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
+                        </form>
+                    </div>
+                    <div class="shopping_cart">
+                        <div class="cart">
+                            <a href="#" title="View my shopping cart" rel="nofollow">
+                                <strong class="opencart"> </strong>
+                                <span class="cart_title">Cart</span>
+                                <span class="no_product">(empty)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="languages">
+                        <div id="language" class="wrapper-dropdown" tabindex="1">
+                            EN
+                            <strong class="opencart"> </strong>
+                            <ul class="dropdown languges">
+                                <li>
+                                    <a href="#" title="Français">
+                                        <span><img src="images/gb.png" alt="en" width="26" height="26"></span><span class="lang">English</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Français">
+                                        <span><img src="images/au.png" alt="fr" width="26" height="26"></span><span class="lang">Français</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Español">
+                                        <span><img src="images/bm.png" alt="es" width="26" height="26"></span><span class="lang">Español</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Deutsch">
+                                        <span><img src="images/ck.png" alt="de" width="26" height="26"></span><span class="lang">Deutsch</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Russian">
+                                        <span><img src="images/cu.png" alt="ru" width="26" height="26"></span><span class="lang">Russian</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <script type="text/javascript">
+                            function DropDown(el) {
+                                this.dd = el;
+                                this.initEvents();
+                            }
+                            DropDown.prototype = {
+                                initEvents: function () {
+                                    var obj = this;
+
+                                    obj.dd.on('click', function (event) {
+                                        $(this).toggleClass('active');
+                                        event.stopPropagation();
+                                    });
+                                }
+                            }
+
+                            $(function () {
+
+                                var dd = new DropDown($('#language'));
+
+                                $(document).click(function () {
+                                    // all dropdowns
+                                    $('.wrapper-dropdown').removeClass('active');
+                                });
+
+                            });
+
+                        </script>
+                    </div>
+                    <div class="currency">
+                        <div id="currency" class="wrapper-dropdown" tabindex="1">
+                            $
+                            <strong class="opencart"> </strong>
+                            <ul class="dropdown">
+                                <li><a href="#"><span>$</span>Dollar</a></li>
+                                <li><a href="#"><span>€</span>Euro</a></li>
+                            </ul>
+                        </div>
+                        <script type="text/javascript">
+                            function DropDown(el) {
+                                this.dd = el;
+                                this.initEvents();
+                            }
+                            DropDown.prototype = {
+                                initEvents: function () {
+                                    var obj = this;
+
+                                    obj.dd.on('click', function (event) {
+                                        $(this).toggleClass('active');
+                                        event.stopPropagation();
+                                    });
+                                }
+                            }
+
+                            $(function () {
+
+                                var dd = new DropDown($('#currency'));
+
+                                $(document).click(function () {
+                                    // all dropdowns
+                                    $('.wrapper-dropdown').removeClass('active');
+                                });
+
+                            });
+
+                        </script>
+                    </div>
+                    <div class="login">
+                        <span><a href="login.php"><img src="images/login.png" alt="" title="login" /></a></span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="h_menu">
+                <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
+                <nav>
+                    <ul class="menu list-unstyled" style="
+                        width: 100%;
+                        background-color: #38373C;
+                        height: 59px;">
+                        <li><a href="index.php">HOME</a></li>
+                        <li class="activate">
+                            <a href="@Url.Action("Index", "Products")">Products</a>
+                        </li>
+                        <li>
+                            <a href="products.php">Top Brand</a>
+                        </li>
+                        <li><a href="@Url.Action("Index", "FAQ")">Services</a></li>
+                        <li><a href="@Url.Action("Index", "About")">About</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="@Url.Action("Index", "Promote")">PROMOTE</a></li>
+                        <li><a href="@Url.Action("Index", "Contact")">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <script src="js/menu.js" type="text/javascript"></script>
+            </div>
+        </div>
+        <div class="main">
+            <h1 style="text-align: center">GIỚI THIỆU VỀ CỬA HÀNG QUYẾT TIẾN</h1>
+            <span>
+                <div>
+                    <a href="quyettien.com">Cửa hàng Quyết Tiến</a> được thành lập vào 12/2010, là chuỗi bán hàng điện máy <strong>lớn nhất cả nước</strong> với hơn 999 cửa hàng chi nhánh tại 63 tỉnh thành.
+                    Với tầm nhìn chiến lược kinh doanh và những nỗ lực không ngừng , Quyết Tiến đã trở thành một trong những thương hiệu bán lẻ<strong> số 1 Việt Nam</strong>. Hàng hóa tại các <a href="quyettien.com"> cửa hàng Quyết Tiến</a> vô cùng đa dạng, từ các nhóm hàng lớn như<em>: Tivi, Tủ lạnh, Máy giặt, Máy lạnh</em>,... đến các nhóm hàng gia dụng như:<em> Nồi Cơm Điện, Bếp Ga, Bếp Điện Từ</em>,..
+                    <div>
+                        Với phương châm <strong>"Tất cả vì khách hàng"</strong> và định hướng tiến tới trong tương lai, <a href="quyettien.com">Quyết Tiến</a> luôn nổ lực không ngừng để cung cấp cho khách hàng những<strong> chất lượng tốt nhất</strong>. Sự tin tưởng và ủng hộ của khách hàng trong thời gian vừa qua là nguồn động viên to lớn trên bước đường phát triển của<a href="quyettien.com"> Quyết Tiến</a> chúng tôi.
+                    </div>
+                </div>
+                <div>
+                    <h2 style="text-align: center">TỔNG ĐÀI HỖ TRỢ KHÁCH HÀNG</h2>
+                    <ul style=”list-style-type: square;”>
+                        <li>Tổng đài bán hàng(24/7)<strong>: 1111.2222</strong></li>
+                        <li>Khiếu nại(24/7)<strong>; 1111.3333</strong></li>
+                        <li>Hỗ trợ khách hàng(24/7)<strong>: 1111.4444</strong></li>
+                    </ul>
+                    <img src="http://dienlanhsach.com/wp-content/uploads/2018/06/sua-may-lanh-gia-re-dong-nai-1.jpg" style="width: 100%">
+                </div>
+            </span>
+        </div>
+    </div>
+</body>

@@ -191,9 +191,16 @@
     <Compile Include="Areas\Admin\Controllers\InstallmentBillDetailsController.cs" />
     <Compile Include="Areas\Admin\Controllers\InstallmentBillsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
+<<<<<<< HEAD
     <Compile Include="Areas\Admin\Models\ReceiptModel.cs" />
+=======
+    <Compile Include="Areas\Main\Controllers\AboutController.cs" />
+    <Compile Include="Areas\Main\Controllers\ContactController.cs" />
+    <Compile Include="Areas\Main\Controllers\FAQController.cs" />
+    <Compile Include="Areas\Main\Controllers\NoiQuyController.cs" />
+>>>>>>> tam
     <Compile Include="Areas\Main\Controllers\ProductsController.cs" />
-    <Compile Include="Areas\Main\Controllers\ProductCustommer.cs" />
+    <Compile Include="Areas\Main\Controllers\PromoteController.cs" />
     <Compile Include="Areas\Main\MainAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -394,6 +401,7 @@
     <Content Include="Areas\Admin\Views\ProductAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductAdmin\Login.cshtml" />
     <Content Include="Areas\Main\Views\Products\Login.cshtml" />
+<<<<<<< HEAD
     <Content Include="Areas\Admin\Views\CashBills\Print.cshtml" />
     <Content Include="Areas\Admin\Views\CashBills\Login.cshtml" />
     <Content Include="Areas\Admin\Views\InstallmentBills\Create.cshtml" />
@@ -411,6 +419,13 @@
     <Content Include="Areas\Admin\Views\InstallmentBillDetails\CreateEditI.cshtml" />
     <Content Include="Areas\Admin\Views\InstallmentBillDetails\Editviewi.cshtml" />
     <Content Include="Areas\Admin\Views\CashBills\Login2.cshtml" />
+=======
+    <Content Include="Areas\Main\Views\Contact\Index.cshtml" />
+    <Content Include="Areas\Main\Views\Promote\Index.cshtml" />
+    <Content Include="Areas\Main\Views\About\Index.cshtml" />
+    <Content Include="Areas\Main\Views\FAQ\Index.cshtml" />
+    <Content Include="Areas\Main\Views\NoiQuy\Index.cshtml" />
+>>>>>>> tam
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
