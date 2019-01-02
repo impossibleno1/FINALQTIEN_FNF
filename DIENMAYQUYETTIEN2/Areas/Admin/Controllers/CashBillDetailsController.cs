@@ -183,6 +183,8 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             return View(cashBillDetail);
         }
 
+        
+
         // POST: Admin/CashBillDetails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -195,13 +197,6 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             return RedirectToAction("Edit", "CashBills", new { id = a });
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        
     }
 }

@@ -44,17 +44,39 @@
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-file"></i>
-                        <span class="nav-link-text">Manage CashBill </span>
+                        <span class="nav-link-text">Quản lý hóa đơn </span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                         <li>
-                            <a href="~/Admin/CashBills">Quản Lý Hóa Đơn </a>
+                            <a href="~/Admin/CashBills">Danh sách hóa đơn </a>
                         </li>
                         <li>
-                            <a href="~/Admin/CashBills/Create">Thêm Hóa Đơn Mới</a>
+                            <a href="~/Admin/CashBills/Create">Thêm hóa đơn mới</a>
                         </li>
                         
                     </ul>
+                </li>
+
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-sitemap"></i>
+                        <span class="nav-link-text">Quản lý hóa đơn trả góp</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseMulti">
+                        <li>
+                            <a href="~/Admin/InstallmentBills">Danh sách hóa đơn trả góp</a>
+                        </li>
+                        <li>
+                            <a href="~/Admin/InstallmentBills/Create">Thêm hóa đơn trả góp mới</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                    <a class="nav-link" href="charts.html">
+                        <i class="fa fa-fw fa-area-chart"></i>
+                        <span class="nav-link-text">Quản lý liên hệ</span>
+                    </a>
                 </li>
 
             </ul>
@@ -227,7 +249,7 @@
         <script src="~/Scripts/dataTables.bootstrap4.js"></script>
         <script src="~/Scripts/sb-admin.min.js"></script>
         <script src="~/Scripts/sb-admin-datatables.min.js"></script>
-        @RenderSection("Scripts", false);
+        @RenderSection("Scripts", false)
     </div>
 </body>
 </html>

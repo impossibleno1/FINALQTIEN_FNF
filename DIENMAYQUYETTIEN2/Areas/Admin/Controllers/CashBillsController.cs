@@ -151,13 +151,13 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             cashbill2.GrandTotal = sum;
 
 
-            Session["CashBill"] = cashbill2;
+            Session["CashBill2"] = cashbill2;
             if (cashbill2 == null)
             {
                 return HttpNotFound();
             }
 
-            return View(Session["CashBill"]);
+            return View(Session["CashBill2"]);
         }
 
         // POST: Admin/CashBills/Edit/5

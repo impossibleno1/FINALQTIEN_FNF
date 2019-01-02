@@ -33,5 +33,6 @@ namespace DIENMAYQUYETTIEN2.Models
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Contact> Contacts { get; set; }
     }
 }

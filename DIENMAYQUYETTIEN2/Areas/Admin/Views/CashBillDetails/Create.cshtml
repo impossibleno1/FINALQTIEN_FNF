@@ -8,8 +8,8 @@
 @using (Html.BeginForm("Create2", "CashBillDetails")) 
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal" style="padding: 0px 6%;">
+    <h2 style="padding-left: 230px;font-size: 40px; color:pink;">Thêm sản phẩm vào hóa đơn</h2>
+    <div class="form-horizontal" style="padding-top: 0px 5%;">
         @Html.ValidationSummary(true)
         <div class="form-group">
             @Html.LabelFor(model => model.ProductID, "Product", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -38,7 +38,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-primary" />
-                <a title="Back" href="@Url.Action("Index")" class="btn btn-danger ">Back to list</a>
+                
             </div>
         </div>
     </div>
