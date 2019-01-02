@@ -203,6 +203,7 @@
     <Compile Include="Areas\Admin\Controllers\InstallmentBillsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
     <Compile Include="Areas\Admin\Models\ReceiptModel.cs" />
+    <Compile Include="Areas\Admin\Models\ReceiptModel2.cs" />
     <Compile Include="Areas\Main\Controllers\AboutController.cs" />
     <Compile Include="Areas\Main\Controllers\ContactController.cs" />
     <Compile Include="Areas\Main\Controllers\FAQController.cs" />
@@ -431,6 +432,8 @@
     <Content Include="Areas\Main\Views\About\Index.cshtml" />
     <Content Include="Areas\Main\Views\FAQ\Index.cshtml" />
     <Content Include="Areas\Main\Views\NoiQuy\Index.cshtml" />
+    <Content Include="Areas\Main\Views\Contact\Index2.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBills\Print.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

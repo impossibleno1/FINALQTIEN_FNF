@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DIENMAYQUYETTIEN2.Models;
 using System.Transactions;
+using DIENMAYQUYETTIEN2.Areas.Admin.Models;
 
 namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
 {
@@ -65,17 +66,18 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             using (var scope = new TransactionScope())
                 try
                 {
-                    var inscashBill = Session["InsCashBill"] as CashBill;
-                    var ctinscashBill = Session["insctcashBill"] as List<CashBillDetail>;
+                    var inscashBill = Session["InsCashBill"] as InstallmentBill;
+                    var ctinscashBill = Session["insctcashBill"] as List<InstallmentBillDetail>;
 
-                    db.CashBills.Add(inscashBill);
+                    db.InstallmentBills.Add(inscashBill);
                     db.SaveChanges();
 
                     foreach (var chiTiet in ctinscashBill)
                     {
                         chiTiet.BillID = inscashBill.ID;
                         chiTiet.Product = null;
-                        db.CashBillDetails.Add(chiTiet);
+                        db.InstallmentBillDetails.Add(chiTiet);
+                        inscashBill.GrandTotal += (chiTiet.Quantity * chiTiet.InstallmentPrice);
                         
                     }
 
@@ -171,6 +173,33 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Print(int id)
+        {
+            var order = db.InstallmentBills.FirstOrDefault(o => o.ID == id);
+            if (order != null)
+            {
+                ReceiptModel2 rp = new ReceiptModel2();
+                rp.BillCode = order.BillCode;
+                
+                rp.CustomerID = order.Customer.CustomerName;
+                rp.CustomerP = order.Customer.PhoneNumber;
+                rp.Date = order.Date;
+                rp.GrandTotal = order.GrandTotal;
+                rp.Shipper = order.Shipper;
+                rp.Method = order.Method;
+                rp.Period = order.Period;
+                rp.Note = order.Note;
+                rp.Taken = order.Taken;
+                rp.Remain = order.Remain;
+                rp.InstallmentBillDetails = order.InstallmentBillDetails.ToList();
+                return View(rp);
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

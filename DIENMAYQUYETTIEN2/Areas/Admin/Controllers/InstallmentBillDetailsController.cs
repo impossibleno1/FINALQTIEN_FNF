@@ -35,7 +35,7 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
 
         public int InstallmentPrice(int ProductID)
         {
-            return db.InstallmentBillDetails.Find(ProductID).InstallmentPrice;
+            return db.Products.Find(ProductID).InstallmentPrice;
         }
 
         // POST: Admin/InstallmentBillDetails/Create
@@ -49,11 +49,11 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
             {
                 model.ID = Environment.TickCount;
                 model.Product = db.Products.Find(model.ProductID);
-                var ctinscashBill = Session["insctcashBill"] as List<InstallmentBillDetail>;
-                if (ctinscashBill == null)
-                    ctinscashBill = new List<InstallmentBillDetail>();
-                ctinscashBill.Add(model);
-                Session["insctcashBill"] = ctinscashBill;
+                var insctcashBill = Session["insctcashBill"] as List<InstallmentBillDetail>;
+                if (insctcashBill == null)
+                    insctcashBill = new List<InstallmentBillDetail>();
+                insctcashBill.Add(model);
+                Session["insctcashBill"] = insctcashBill;
                 return RedirectToAction("Create", "InstallmentBills");
             }
 

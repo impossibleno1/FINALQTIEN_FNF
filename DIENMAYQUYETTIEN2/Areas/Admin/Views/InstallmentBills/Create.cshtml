@@ -9,22 +9,16 @@
         @Html.AntiForgeryToken()
     <div style="height: 20px;"></div>
     <div class="form-horizontal" style="padding: 0px 20%;">
-            <h4>InstallmentBill</h4>
+        <h4 style="text-align:center;font-size: 40px;">Add New InstallmentBill</h4>
             <hr />
         @Html.ValidationSummary(true)
-            <div class="form-group">
-                @Html.LabelFor(model => model.BillCode, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.BillCode, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.BillCode, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            
     
             <div class="form-group">
-                @Html.LabelFor(model => model.CustomerID, "CustomerID", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.CustomerID, "Customer Name", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                 @Html.DropDownList("CustomerID", String.Empty)
-                    @Html.ValidationMessageFor(model => model.CustomerID, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.CustomerID)
                 </div>
             </div>
     
@@ -32,7 +26,7 @@
                 @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Date)
                 </div>
             </div>
     
@@ -40,7 +34,7 @@
                 @Html.LabelFor(model => model.Shipper, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Shipper, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Shipper, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Shipper)
                 </div>
             </div>
     
@@ -48,7 +42,7 @@
                 @Html.LabelFor(model => model.Note, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Note, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Note, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Note)
                 </div>
             </div>
     
@@ -56,7 +50,7 @@
                 @Html.LabelFor(model => model.Method, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Method, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Method, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Method)
                 </div>
             </div>
     
@@ -64,7 +58,7 @@
                 @Html.LabelFor(model => model.Period, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Period, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Period, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Period)
                 </div>
             </div>
     
@@ -72,7 +66,7 @@
                 @Html.LabelFor(model => model.GrandTotal, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.GrandTotal, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.GrandTotal, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.GrandTotal)
                 </div>
             </div>
     
@@ -80,7 +74,7 @@
                 @Html.LabelFor(model => model.Taken, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Taken, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Taken, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Taken)
                 </div>
             </div>
     
@@ -88,7 +82,7 @@
                 @Html.LabelFor(model => model.Remain, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Remain, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Remain, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Remain)
                 </div>
             </div>
     
@@ -111,7 +105,7 @@
     {
         @Html.AntiForgeryToken()
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-2 col-md-10" style="margin-left: 250px">
                 <input type="submit" value="Lập hóa đơn" class="btn btn-primary" />
             </div>
     </div>
@@ -120,7 +114,7 @@
 @section Scripts {
     <script>
     $('#ProductID').change(function () {
-            var url = '@Url.Action("InstallmentPrice", "CashBillDetails")';
+            var url = '@Url.Action("InstallmentPrice", "InstallmentBillDetails")';
         url = url + '?ProductID=' + $(this).val();
         $.get(url, function (data) {
             $('#InstallmentPrice').val(data);

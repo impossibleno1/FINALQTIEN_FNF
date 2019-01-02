@@ -6,54 +6,51 @@
 
 <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InstallmentPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InstallmentBill.BillCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product.ProductCode)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InstallmentPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InstallmentBill.BillCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.ProductCode)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-            </td>
-        </tr>
-    }
-    
+<h2 style="text-align:center;font-size: 40px;">List Products</h2>
+    <table class="table" style="width: 70%; margin-left: 250px" >
+        <thead>
+            <tr>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Installment Price
+                </th>
+                <th>
+                    Total
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InstallmentPrice)
+                </td>
+                <td>
+                    @(item.Quantity * item.InstallmentPrice)
+                </td>
+
+            </tr>
+        }
+
     </table>
-</body>
-</html>
+    <div>
+        <div class="form-group">
+            <label class="control-label col-md-2" style="margin-left: 250px">Grand Total</label>
+            <div class="col-md-10">
+                <input id="GrandTotal2" class="disabled" style="margin-left: 250px" value="@Model.Sum(m => m.InstallmentPrice * m.Quantity)" disabled /> VNĐ
+            </div>
+        </div>
+    </div>

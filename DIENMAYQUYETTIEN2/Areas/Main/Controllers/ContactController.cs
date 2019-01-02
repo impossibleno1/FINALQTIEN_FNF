@@ -16,6 +16,15 @@ namespace DIENMAYQUYETTIEN2.Areas.Main.Controllers
             return View();
         }
 
+        public ActionResult Index2()
+        {
+
+
+
+            return View(db.Contacts.ToList());
+
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Contact ct)
