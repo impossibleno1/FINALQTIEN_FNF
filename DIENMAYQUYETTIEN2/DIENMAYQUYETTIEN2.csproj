@@ -408,6 +408,9 @@
     <Content Include="Areas\Admin\Views\InstallmentBillDetails\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CashBillDetails\Editview.cshtml" />
     <Content Include="Areas\Admin\Views\CashBillDetails\CreateEdit.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBillDetails\CreateEditI.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentBillDetails\Editviewi.cshtml" />
+    <Content Include="Areas\Admin\Views\CashBills\Login2.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

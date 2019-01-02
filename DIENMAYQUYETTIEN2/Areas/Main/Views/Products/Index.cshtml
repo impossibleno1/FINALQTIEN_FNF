@@ -13,27 +13,28 @@
         <div class="col-xs-12 col-md-10" style="padding:20px">
             <div class="container-fluid" style="width: 100%; height: 500px; display: flex; justify-content: center; background-color: white;">
                 <div class="row">
-                    <div class="col-xs-12 col-md-6" style="width: 50%; height: 100%; flex-wrap: wrap; display: flex;">
+                    
+                    <div class="col-xs-12 col-md-6 img-thumbnail" style="">
+                        <h4 style="color: #602D8D; font-family: 'Monda', sans-serif; text-transform: uppercase; " >NEW PRODUCTS</h4>
+                        <div class="grid-container" style="display: grid;grid-column-gap: 20px;grid-template-columns: auto auto auto;padding: 10px;">
 
-
-                        @for (int i = 0; i < 4; i++)
-                        {
-                            <div style="width: 48%; height: 48%; display: flex; justify-content: center; flex-direction: row; align-items: center; border: 1px solid gray; margin: 5px;">
-                                <img src="@Url.Action("Details", new { id = Model.ElementAt(i).ID })" style="height: 90%; width: 50%;" />
-                                <div style="display: flex; justify-content: flex-start; flex-direction: column; align-items: flex-start; padding-left: 10px;">
-                                    <h2 style="color: red; margin-bottom: 3px;">@Model.ElementAt(i).ProductName</h2>
-                                    <div style="margin-bottom: 10px;">
-
-                                    </div>
-                                    <button class="btn btn-primary">Add to cart</button>
+                            @for (int i = 0; i < 6; i++)
+                            {
+                                <div class="grid-item img-thumbnail" style="height: 100%; margin: 5px;">
+                                    <a href="preview-3.html"><img src="@Url.Action("Details", new { id = Model.ElementAt(i).ID })" class="img-thumbnail" alt="@Model.ElementAt(i).ProductName" style="height:auto;" /></a>
+                                    <h6>@Model.ElementAt(i).ProductName</h6>
+                                    <p>
+                                        <span class="strike">@Model.ElementAt(i).SalePrice đ</span>
+                                        <button style="color:darkgreen">Add to Cart</button>
                                 </div>
-                            </div>
-                        }
+                            }
 
+
+                        </div>
 
                     </div>
 
-                    <div class="col-xs-12 col-md-6" style="width: 50%; height: 100%; display:flex; justify-content: center; align-items: center;">
+                    <div class="col-xs-12 hidden-xs col-md-6 img-thumbnail" style="width: 50%; height: 100%; display: flex; justify-content: center; align-items: center;">
                         @*<img src="@Url.Action("Details", new { id = Model.ElementAt(0).ID })" style="height: 98%; margin-left: -20px;" />*@
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="margin-left:20px;margin-right:20px;">
                             <div class="carousel-inner">
@@ -85,7 +86,7 @@
                             </div>
                         }
                     </div>
-                    <div class="content_bottom">
+                    @*<div class="content_bottom">
                         <div class="heading">
                             <h3>New Products</h3>
                         </div>
@@ -100,8 +101,8 @@
                             </p>
                         </div>
                         <div class="clear"></div>
-                    </div>
-                    <div class="section group" style="padding-left: 5px; padding-right: 5%; flex-wrap: wrap; justify-content: center; align-items: center;">
+                    </div>*@
+                    @*<div class="section group" style="padding-left: 5px; padding-right: 5%; flex-wrap: wrap; justify-content: center; align-items: center;">
                         @foreach (var item in Model)
                         {
                             <div class="grid_1_of_4 images_1_of_4" style="margin: 10px;">
@@ -112,7 +113,7 @@
                                 <div class="button"><span><a href="preview-3.html" class="details">Details</a></span></div>
                             </div>
                         }
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>

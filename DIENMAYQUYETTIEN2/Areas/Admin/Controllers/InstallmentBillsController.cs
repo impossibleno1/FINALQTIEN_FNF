@@ -97,11 +97,22 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // GET: Admin/InstallmentBills/Edit/5
         public ActionResult Edit(int? id)
         {
+            Session["idi"] = id;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             InstallmentBill installmentBill = db.InstallmentBills.Find(id);
+            var query = db.CashBillDetails.Where(cbd => cbd.BillID == id).ToList();
+            var b = query as List<CashBillDetail>;
+            var sum = 0;
+            foreach (var chiTiet in b)
+            {
+                sum += (chiTiet.Quantity * chiTiet.SalePrice);
+            }
+            installmentBill.GrandTotal = sum;
+
+            Session["CashBilli"] = installmentBill;
             if (installmentBill == null)
             {
                 return HttpNotFound();
@@ -115,16 +126,16 @@ namespace DIENMAYQUYETTIEN2.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BillCode,CustomerID,Date,Shipper,Note,Method,Period,GrandTotal,Taken,Remain")] InstallmentBill installmentBill)
+        public ActionResult Edit( InstallmentBill model)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(installmentBill).State = EntityState.Modified;
+                db.Entry(model).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "CustomerCode", installmentBill.CustomerID);
-            return View(installmentBill);
+            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "CustomerCode", model.CustomerID);
+            return View(model);
         }
 
         // GET: Admin/InstallmentBills/Delete/5
