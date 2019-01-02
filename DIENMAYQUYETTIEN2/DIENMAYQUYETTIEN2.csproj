@@ -167,8 +167,12 @@
     <Compile Include="Areas\Admin\Controllers\CashBillDetailsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CashBillsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
+    <Compile Include="Areas\Main\Controllers\AboutController.cs" />
+    <Compile Include="Areas\Main\Controllers\ContactController.cs" />
+    <Compile Include="Areas\Main\Controllers\FAQController.cs" />
+    <Compile Include="Areas\Main\Controllers\NoiQuyController.cs" />
     <Compile Include="Areas\Main\Controllers\ProductsController.cs" />
-    <Compile Include="Areas\Main\Controllers\ProductCustommer.cs" />
+    <Compile Include="Areas\Main\Controllers\PromoteController.cs" />
     <Compile Include="Areas\Main\MainAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -183,6 +187,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CashBillDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
@@ -361,6 +368,11 @@
     <Content Include="Areas\Admin\Views\ProductAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductAdmin\Login.cshtml" />
     <Content Include="Areas\Main\Views\Products\Login.cshtml" />
+    <Content Include="Areas\Main\Views\Contact\Index.cshtml" />
+    <Content Include="Areas\Main\Views\Promote\Index.cshtml" />
+    <Content Include="Areas\Main\Views\About\Index.cshtml" />
+    <Content Include="Areas\Main\Views\FAQ\Index.cshtml" />
+    <Content Include="Areas\Main\Views\NoiQuy\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

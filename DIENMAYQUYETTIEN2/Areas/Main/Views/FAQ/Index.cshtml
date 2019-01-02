@@ -1,0 +1,231 @@
+﻿@{
+    Layout = null;
+}
+@model DIENMAYQUYETTIEN2.Models.Contact
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Main/Views/Shared/_Admin_Layout.cshtml";
+}
+<head>
+    <title>Free Smart Store Website Template | Contact :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="js/jquery.min.js"></script>
+    <link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="header_top">
+                <div class="logo">
+                    <a href="index.png"><img src="images/logo.png" alt="" /></a>
+                </div>
+                <div class="header_top_right">
+                    <div class="search_box">
+                        <form>
+                            <input type="text" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
+                        </form>
+                    </div>
+                    <div class="shopping_cart">
+                        <div class="cart">
+                            <a href="#" title="View my shopping cart" rel="nofollow">
+                                <strong class="opencart"> </strong>
+                                <span class="cart_title">Cart</span>
+                                <span class="no_product">(empty)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="languages">
+                        <div id="language" class="wrapper-dropdown" tabindex="1">
+                            EN
+                            <strong class="opencart"> </strong>
+                            <ul class="dropdown languges">
+                                <li>
+                                    <a href="#" title="Français">
+                                        <span><img src="images/gb.png" alt="en" width="26" height="26"></span><span class="lang">English</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Français">
+                                        <span><img src="images/au.png" alt="fr" width="26" height="26"></span><span class="lang">Français</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Español">
+                                        <span><img src="images/bm.png" alt="es" width="26" height="26"></span><span class="lang">Español</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Deutsch">
+                                        <span><img src="images/ck.png" alt="de" width="26" height="26"></span><span class="lang">Deutsch</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Russian">
+                                        <span><img src="images/cu.png" alt="ru" width="26" height="26"></span><span class="lang">Russian</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <script type="text/javascript">
+                            function DropDown(el) {
+                                this.dd = el;
+                                this.initEvents();
+                            }
+                            DropDown.prototype = {
+                                initEvents: function () {
+                                    var obj = this;
+
+                                    obj.dd.on('click', function (event) {
+                                        $(this).toggleClass('active');
+                                        event.stopPropagation();
+                                    });
+                                }
+                            }
+
+                            $(function () {
+
+                                var dd = new DropDown($('#language'));
+
+                                $(document).click(function () {
+                                    // all dropdowns
+                                    $('.wrapper-dropdown').removeClass('active');
+                                });
+
+                            });
+
+                        </script>
+                    </div>
+                    <div class="currency">
+                        <div id="currency" class="wrapper-dropdown" tabindex="1">
+                            $
+                            <strong class="opencart"> </strong>
+                            <ul class="dropdown">
+                                <li><a href="#"><span>$</span>Dollar</a></li>
+                                <li><a href="#"><span>€</span>Euro</a></li>
+                            </ul>
+                        </div>
+                        <script type="text/javascript">
+                            function DropDown(el) {
+                                this.dd = el;
+                                this.initEvents();
+                            }
+                            DropDown.prototype = {
+                                initEvents: function () {
+                                    var obj = this;
+
+                                    obj.dd.on('click', function (event) {
+                                        $(this).toggleClass('active');
+                                        event.stopPropagation();
+                                    });
+                                }
+                            }
+
+                            $(function () {
+
+                                var dd = new DropDown($('#currency'));
+
+                                $(document).click(function () {
+                                    // all dropdowns
+                                    $('.wrapper-dropdown').removeClass('active');
+                                });
+
+                            });
+
+                        </script>
+                    </div>
+                    <div class="login">
+                        <span><a href="login.php"><img src="images/login.png" alt="" title="login" /></a></span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="h_menu">
+                <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
+                <nav>
+                    <ul class="menu list-unstyled" style="
+                        width: 100%;
+                        background-color: #38373C;
+                        height: 59px;">
+                        <li><a href="index.php">HOME</a></li>
+                        <li class="activate">
+                            <a href="@Url.Action("Index", "Products")">Products</a>
+                        </li>
+                        <li>
+                            <a href="products.php">Top Brand</a>
+                        </li>
+                        <li><a href="@Url.Action("Index", "FAQ")">Services</a></li>
+                        <li><a href="@Url.Action("Index", "About")">About</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="@Url.Action("Index", "Promote")">PROMOTE</a></li>
+                        <li><a href="@Url.Action("Index", "Contact")">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <script src="js/menu.js" type="text/javascript"></script>
+            </div>
+        </div>
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row border ">
+                    <div class=" col 12 col-xs-12 col-sm-12 col-md-12"><img src="https://static.scdn.vn/images/ecom/static-pages/huong-dan/tra-gop/banner.jpg" alt="tragop" style="width:100%;height:100%;"> </div>
+                </div>
+                <div class="row">
+                    <h3>Chính sách <strong>trả góp 0%</strong> tại điện máy <strong>Quyết Tiến</strong></h3>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <ul>
+                    <li><b>1</b>. Điều kiện và giấy tờ cần có khi trả góp tại <strong>Quyết Tiến</strong> </li>
+                    <li><b>2</b>. Làm sao để có lãi suất tốt nhất </li>
+                    <li><b>3</b>. "Bí kíp" được duyệt mua trả góp đến 90% </li>
+                    <li><b>4</b>. Lợi ích khi mua trả góp tại<strong> Quyết Tiến</strong> </li>
+                </ul>
+                <ul class="block-content">
+                    <li class="block-title" style="color: #DAA520"><b>1. ĐIỀU KIỆN VÀ GIẤY TỜ GỐC CẦN CÓ</b></li>
+                    <li>Tuổi từ 20 - 60 (tính theo ngày tháng năm sinh trên chứng minh nhân dân).</li>
+                    <li>Chứng minh nhân dân còn hạn sử dụng (15 năm tính từ ngày cấp).</li>
+                    <li>Hộ khẩu (người mua hàng phải có tên trong hộ khẩu). Nếu khoản vay dưới 10 triệu có thể thay hộ khẩu bằng bằng lái xe.</li>
+                    <li>Công ty tài chính chỉ kiểm tra xong và gửi lại không giữ bất cứ giấy tờ gì của khách hàng.</li>
+                </ul>
+                <ul class="block-content">
+                    <li class="block-title" style="color: #DAA520"><b>2. LÀM SAO ĐỂ CÓ LÃI SUẤT TỐT NHẤT</b></li>
+                    <li class="no-disc">Lãi suất có thể giảm thêm 5 - 7%/năm nếu bạn có thêm các giấy tờ sau:</li>
+                    <li>Hoá đơn tiền điện / nước / Internet /TH cáp / điện thoại: do bạn đứng tên hoặc có địa chỉ trùng với nơi bạn ở.</li>
+                    <li class="no-disc">Nếu vay trên 10 triệu thì có thêm:</li>
+                    <li>Nếu đang đi làm: có sao kê tài khoản 3 tháng gần nhất / hoặc Hợp đồng lao động / hoặc Bảo hiểm y tế.</li>
+                    <li>
+                        Nếu là chủ Doanh Nghiệp: Giấy phép kinh doanh + Biên lai thuế 3 tháng gần nhất.
+                    </li>
+                </ul>
+                <ul class="block-content">
+                    <li class="block-title" style="color: #DAA520"><b>3. "BÍ KÍP" ĐỂ DUYỆT TRẢ GÓP TỚI 90%</b></li>
+                    <li>Nếu bạn đang còn góp một hợp đồng trước đó với công ty tài chính thì nên góp hết hoặc thanh lý xong mới làm hồ sơ góp mới.</li>
+                    <li>Số tiền góp mỗi tháng nên bằng một nửa số tiền bạn còn dư sau khi chi tiêu. <b>VD</b>: thu nhập của bạn là 8tr, bạn chi tiêu bình quân 5tr còn dư 3tr thì tốt nhất bạn nên góp 1,5tr/tháng.</li>
+                    <li>Số điện thoại người tham chiếu nên là người thân của mình như vợ/chồng, anh/chị/em trong gia đình, bạn thân và phải biết việc mình chuẩn bị mua trả góp.</li>
+                    <li>Thông tin bạn cung cấp cho nhân viên tài chính càng chi tiết và chính xác thì hồ sơ của bạn có tỷ lệ duyệt càng cao.</li>
+                    <li>Lịch sử vay tiền mặt hoặc trả góp tốt ( trả hết, không đóng tiền quá trễ mỗi tháng ) cũng là điều kiện để bạn được duyệt cho những lần kế tiếp.</li>
+                </ul>
+                <ul class="block-content">
+                    <li style="color: #DAA520"><b>4. LỢI ÍCH KHI MUA TRẢ GÓP Ở TGDD</b></li>
+                    <li><b>1.</b> <strong>Thủ tục đăng ký và duyệt hồ sơ nhanh chóng qua điện thoại.</strong> ( Với hình thức này khách hàng không cần phải ra siêu thị để chờ đợi mà có thể lên hồ sơ trước, nếu hồ sơ hợp lệ thì mới mang đủ giấy tờ ra siêu thị để nhận máy )</li>
+                    <li><b>Bước 1</b>: Đặt trả góp tại <strong><a href="https://www.w3schools.com">www.dmquyettien.com</a></strong></li>
+                    <li><b>Bước 2</b>: Đợi cuộc gọi từ nhân viên làm hồ sơ của công ty tài chính trong 2 giờ nếu đặt trước 18 giờ, đặt sau giờ này sẽ nhận cuộc gọi trước 12 giờ hôm sau ( Cuộc gọi này sẽ xin các thông tin cá nhân cần thiết để nhập vào hồ sơ đăng ký trả góp ).</li>
+                    <li><b>Bước 3</b>: Nhận cuộc gọi thẩm định.</li>
+                    <li><b>Bước 4</b>: Nhận kết quả thẩm định qua tin nhắn hoặc cuộc gọi.</li>
+                    <li><b>Bước 5</b>: Mang hồ sơ gốc đến cửa hàng và nhận hàng. (hồ sơ sẽ được trả lại sau khi đã đối chiếu).</li>
+                    <li><b>2.</b> Bán theo giá niêm yết tại website và nhận đủ các khuyến mãi (tuỳ sản phẩm sẽ không áp dụng đồng thời chương trình<strong> trả góp lãi suất 0%</strong>).</li>
+                    <li>Trả tiền góp hàng tháng tiện lợi, nhanh chóng tại website.</li>
+                    <li>Luôn có sản phẩm<strong> trả góp lãi suất 0% </strong> hoặc nhiều ưu đãi khác.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>

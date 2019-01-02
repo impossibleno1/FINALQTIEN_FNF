@@ -19,6 +19,7 @@
         <AssociationConnector Association="DIENMAYQUYETTIENModel.FK_InstallmentBillDetail_Product" ManuallyRouted="false" />
         <AssociationConnector Association="DIENMAYQUYETTIENModel.FK_Product_ProductType" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DIENMAYQUYETTIENModel.Account" Width="1.5" PointX="6.875" PointY="6" />
+        <EntityTypeShape EntityType="DIENMAYQUYETTIENModel.Contact" Width="1.5" PointX="8.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
